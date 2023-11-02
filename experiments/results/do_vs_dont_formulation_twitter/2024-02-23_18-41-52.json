@@ -1,0 +1,332 @@
+{
+    "experiment": {
+        "slug": "do_vs_dont_formulation_twitter",
+        "name": "Do vs dont formulation tweet sentiment analysis",
+        "experiment_type": "DO_VS_DONT_FORMULATION",
+        "task_type": "TWEET_SENTIMENT_ANALYSIS",
+        "models": [
+            "meta-llama/Llama-2-7b-chat-hf",
+            "meta-llama/Llama-2-13b-chat-hf",
+            "meta-llama/Llama-2-70b-chat-hf"
+        ],
+        "prompts": {
+            "user": [
+                {
+                    "name": "Baseline"
+                },
+                {
+                    "name": "Negative"
+                }
+            ]
+        }
+    },
+    "options": {
+        "random_seed": 45,
+        "max_samples": 10
+    },
+    "results": {
+        "meta-llama/Llama-2-7b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "correct_samples": [
+                        {
+                            "sample": "@united 5 gate changes, two delays.  Even the crew thinks the airline sucks",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@SouthwestAir could care more about their customer, if there is a reasonable request :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@JetBlue Sure did go south after breakfast though! Delayed three hours. :( :( :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir That’s a rather clunky process. Whoever designed that clearly doesn’t understand e-mail 101.",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir I can't!!!  No one can't get to \"hold\".  You can't get past the automated reply.  It hangs up on you.  #FRUSTRATED",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        }
+                    ],
+                    "incorrect_samples": [
+                        {
+                            "sample": "@SouthwestAir aren't you based in Chicago? Why are you doing a hunt in LA and not your home city????!! Please bring one home",
+                            "label": "Neutral",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir My ticket was booked with AA with miles..... Sorry we sold you a ticket with a company we merged with but we can't fix it?",
+                            "label": "Negative",
+                            "predicted": "Neutral"
+                        }
+                    ],
+                    "invalid_samples": [
+                        {
+                            "sample": "@AmericanAir I'd love to take my seat, but it appears as though someone already has.  #disappointed #upgrademe #wtf http://t.co/9Gx5mMmubb",
+                            "label": "Negative",
+                            "response": "  Based on the provided tweet, I would classify it as:"
+                        }
+                    ]
+                },
+                "Negative": {
+                    "correct_samples": [
+                        {
+                            "sample": "@united 5 gate changes, two delays.  Even the crew thinks the airline sucks",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@SouthwestAir could care more about their customer, if there is a reasonable request :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@JetBlue Sure did go south after breakfast though! Delayed three hours. :( :( :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir That’s a rather clunky process. Whoever designed that clearly doesn’t understand e-mail 101.",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir I can't!!!  No one can't get to \"hold\".  You can't get past the automated reply.  It hangs up on you.  #FRUSTRATED",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        }
+                    ],
+                    "incorrect_samples": [],
+                    "invalid_samples": [
+                        {
+                            "sample": "@SouthwestAir aren't you based in Chicago? Why are you doing a hunt in LA and not your home city????!! Please bring one home",
+                            "label": "Neutral",
+                            "response": "  Based on the provided tweet, I would classify it as:"
+                        },
+                        {
+                            "sample": "@AmericanAir I'd love to take my seat, but it appears as though someone already has.  #disappointed #upgrademe #wtf http://t.co/9Gx5mMmubb",
+                            "label": "Negative",
+                            "response": "  Based on the provided tweet, I would classify it as:"
+                        },
+                        {
+                            "sample": "@AmericanAir My ticket was booked with AA with miles..... Sorry we sold you a ticket with a company we merged with but we can't fix it?",
+                            "label": "Negative",
+                            "response": "  Based on the provided tweet, I would classify it as:"
+                        }
+                    ]
+                }
+            }
+        },
+        "meta-llama/Llama-2-13b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "correct_samples": [
+                        {
+                            "sample": "@united 5 gate changes, two delays.  Even the crew thinks the airline sucks",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@SouthwestAir could care more about their customer, if there is a reasonable request :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@JetBlue Sure did go south after breakfast though! Delayed three hours. :( :( :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir I'd love to take my seat, but it appears as though someone already has.  #disappointed #upgrademe #wtf http://t.co/9Gx5mMmubb",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir My ticket was booked with AA with miles..... Sorry we sold you a ticket with a company we merged with but we can't fix it?",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir That’s a rather clunky process. Whoever designed that clearly doesn’t understand e-mail 101.",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir I can't!!!  No one can't get to \"hold\".  You can't get past the automated reply.  It hangs up on you.  #FRUSTRATED",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        }
+                    ],
+                    "incorrect_samples": [
+                        {
+                            "sample": "@SouthwestAir aren't you based in Chicago? Why are you doing a hunt in LA and not your home city????!! Please bring one home",
+                            "label": "Neutral",
+                            "predicted": "Negative"
+                        }
+                    ],
+                    "invalid_samples": []
+                },
+                "Negative": {
+                    "correct_samples": [
+                        {
+                            "sample": "@united 5 gate changes, two delays.  Even the crew thinks the airline sucks",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@SouthwestAir could care more about their customer, if there is a reasonable request :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@JetBlue Sure did go south after breakfast though! Delayed three hours. :( :( :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir I'd love to take my seat, but it appears as though someone already has.  #disappointed #upgrademe #wtf http://t.co/9Gx5mMmubb",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir My ticket was booked with AA with miles..... Sorry we sold you a ticket with a company we merged with but we can't fix it?",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir That’s a rather clunky process. Whoever designed that clearly doesn’t understand e-mail 101.",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir I can't!!!  No one can't get to \"hold\".  You can't get past the automated reply.  It hangs up on you.  #FRUSTRATED",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        }
+                    ],
+                    "incorrect_samples": [
+                        {
+                            "sample": "@SouthwestAir aren't you based in Chicago? Why are you doing a hunt in LA and not your home city????!! Please bring one home",
+                            "label": "Neutral",
+                            "predicted": "Negative"
+                        }
+                    ],
+                    "invalid_samples": []
+                }
+            }
+        },
+        "meta-llama/Llama-2-70b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "correct_samples": [
+                        {
+                            "sample": "@united 5 gate changes, two delays.  Even the crew thinks the airline sucks",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@SouthwestAir could care more about their customer, if there is a reasonable request :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@JetBlue Sure did go south after breakfast though! Delayed three hours. :( :( :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir I'd love to take my seat, but it appears as though someone already has.  #disappointed #upgrademe #wtf http://t.co/9Gx5mMmubb",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir My ticket was booked with AA with miles..... Sorry we sold you a ticket with a company we merged with but we can't fix it?",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir That’s a rather clunky process. Whoever designed that clearly doesn’t understand e-mail 101.",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir I can't!!!  No one can't get to \"hold\".  You can't get past the automated reply.  It hangs up on you.  #FRUSTRATED",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        }
+                    ],
+                    "incorrect_samples": [
+                        {
+                            "sample": "@SouthwestAir aren't you based in Chicago? Why are you doing a hunt in LA and not your home city????!! Please bring one home",
+                            "label": "Neutral",
+                            "predicted": "Negative"
+                        }
+                    ],
+                    "invalid_samples": []
+                },
+                "Negative": {
+                    "correct_samples": [
+                        {
+                            "sample": "@united 5 gate changes, two delays.  Even the crew thinks the airline sucks",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@SouthwestAir could care more about their customer, if there is a reasonable request :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@JetBlue Sure did go south after breakfast though! Delayed three hours. :( :( :(",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir I'd love to take my seat, but it appears as though someone already has.  #disappointed #upgrademe #wtf http://t.co/9Gx5mMmubb",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir My ticket was booked with AA with miles..... Sorry we sold you a ticket with a company we merged with but we can't fix it?",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir That’s a rather clunky process. Whoever designed that clearly doesn’t understand e-mail 101.",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        },
+                        {
+                            "sample": "@AmericanAir I can't!!!  No one can't get to \"hold\".  You can't get past the automated reply.  It hangs up on you.  #FRUSTRATED",
+                            "label": "Negative",
+                            "predicted": "Negative"
+                        }
+                    ],
+                    "incorrect_samples": [
+                        {
+                            "sample": "@SouthwestAir aren't you based in Chicago? Why are you doing a hunt in LA and not your home city????!! Please bring one home",
+                            "label": "Neutral",
+                            "predicted": "Negative"
+                        }
+                    ],
+                    "invalid_samples": []
+                }
+            }
+        }
+    },
+    "llm_stats": {
+        "token_usage": {},
+        "total_prompt_tokens": 0,
+        "total_completion_tokens": 0,
+        "total_tokens": 0,
+        "total_cost": "0"
+    },
+    "timestamp": "2024-02-23T18:41:52.887075"
+}

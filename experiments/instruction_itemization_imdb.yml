@@ -1,0 +1,15 @@
+
+name: "Instruction itemization IMDB sentiment analysis"
+experiment_type: "INSTRUCTION_ITEMIZATION"
+task_type: "IMDB_SENTIMENT_ANALYSIS"
+models:
+  - "meta-llama/Llama-2-7b-chat-hf"
+  - "meta-llama/Llama-2-13b-chat-hf"
+  - "meta-llama/Llama-2-70b-chat-hf"
+prompts:
+  system: "ii_imdb_system.jinja2"
+  user:
+    - name: "Baseline"
+      file: "ii_imdb_baseline.jinja2"
+    - name: "Itemized"
+      file: "ii_imdb_itemized.jinja2"

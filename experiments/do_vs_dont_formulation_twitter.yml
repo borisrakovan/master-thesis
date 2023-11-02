@@ -1,0 +1,14 @@
+name: "Do vs dont formulation tweet sentiment analysis"
+experiment_type: "DO_VS_DONT_FORMULATION"
+task_type: "TWEET_SENTIMENT_ANALYSIS"
+models:
+  - "meta-llama/Llama-2-7b-chat-hf"
+  - "meta-llama/Llama-2-13b-chat-hf"
+  - "meta-llama/Llama-2-70b-chat-hf"
+prompts:
+  system: "dvd_twitter_system.jinja2"
+  user:
+    - name: "Baseline"
+      file: "dvd_twitter_baseline.jinja2"
+    - name: "Negative"
+      file: "dvd_twitter_negative.jinja2"
