@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "master-thesis"
+version = "0.1.0"
+description = ""
+authors = ["Boris Rakovan <b.rakovan@gmail.com>"]
+readme = "README.md"
+packages = [{include = "master_thesis"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
