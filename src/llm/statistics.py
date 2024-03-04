@@ -69,6 +69,26 @@ class LlmStatistics(BaseModel):
         self.token_usage[model].completion_tokens += completion_tokens
 
 
+def merge_multiple_llm_statistics(*stats_objects: LlmStatistics) -> LlmStatistics:
+    """Merge multiple LlmStatistics objects into a single LlmStatistics object."""
+
+    merged_stats = LlmStatistics()
+
+    # Iterate over each LlmStatistics object provided as input
+    for stats in stats_objects:
+        # Iterate over each ChatModel in the current LlmStatistics object
+        for model, usage in stats.token_usage.items():
+            # For each model, add its token usage to the merged_stats
+            current_usage = merged_stats.token_usage.get(model, TokenUsage())
+            merged_stats.update(
+                model,
+                current_usage.prompt_tokens + usage.prompt_tokens,
+                current_usage.completion_tokens + usage.completion_tokens
+            )
+
+    return merged_stats
+
+
 _LLM_PRICING = LlmPricing(
     chat_model_pricing={
         ChatModel.GPT_35: TokenPricing(

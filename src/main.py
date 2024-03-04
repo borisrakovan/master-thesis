@@ -7,7 +7,7 @@ from src import constants
 from src.constants import PROJECT_ROOT
 from src.experiment.runner import ExperimentRunner
 from src.experiment.schema import ExperimentRun, ExperimentDefinition, ExperimentRunnerOptions
-from src.llm.client import LlmClient, LlmClientDispatcher
+from src.llm.client import LlmClientDispatcher
 
 logging.basicConfig(level=logging.INFO)
 
@@ -54,7 +54,7 @@ def make_experiment_result_table(experiment_run: ExperimentRun) -> str:
 async def main() -> None:
 
     llm_client = LlmClientDispatcher()
-    runner_options = ExperimentRunnerOptions(random_seed=46, num_samples=1000)
+    runner_options = ExperimentRunnerOptions(random_seed=46, num_samples=200)
     runner = ExperimentRunner(llm_client=llm_client, options=runner_options)
     experiment = ExperimentDefinition.from_file(
         PROJECT_ROOT / "experiments" / "instruction_itemization_twitter.yml"

@@ -2,14 +2,14 @@ import asyncio
 import functools
 import hashlib
 import inspect
-import logging
 import pickle
 from pathlib import Path
 from typing import Callable, ParamSpec, TypeVar, overload
 
 from src import constants
+from src.logger import get_logger
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 DEFAULT_CACHE_DIR: str | Path | None = constants.CACHE_DIRECTORY

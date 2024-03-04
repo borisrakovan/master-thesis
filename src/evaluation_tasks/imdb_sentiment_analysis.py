@@ -4,12 +4,15 @@ from typing import Iterator
 import structlog
 from src.constants import DATA_DIRECTORY
 from src.evaluation_tasks.utils import first_word_occurrence
+from src.llm.client import ChatCompletionParameters
 from src.llm.enums import ChatModel
 from src.llm.prompt_template import PromptTemplate
 from src.evaluation_tasks.base import EvaluationTask
 from src.evaluation_tasks.exceptions import InvalidModelResponseError
+from src.logger import get_logger
 
-logger = structlog.get_logger(__name__)
+
+logger = get_logger(__name__)
 
 
 class IMDbSentimentAnalysis(EvaluationTask):
@@ -34,12 +37,14 @@ class IMDbSentimentAnalysis(EvaluationTask):
                 yield sample, label
 
     async def evaluate(self, sample: str, model: ChatModel, prompt: PromptTemplate) -> str:
-        response = await self._llm_client.chat_completion(
+        response = await self._llm_client.create_chat_completion(
             messages=[self._system_message, prompt.format(sample_text=sample)],
-            model=model,
-            # Give the model enough tokens to output the class label
-            max_tokens=30,
-            temperature=0,
+            parameters=ChatCompletionParameters(
+                model=model,
+                # Give the model enough tokens to output the class label
+                max_tokens=30,
+                temperature=0,
+            )
         )
 
         # Convert the gold label to the class name

@@ -15,8 +15,9 @@ from src.experiment.result import EvaluationResult, ModelResult, ValidSampleResu
 from src.evaluation_tasks.base import EvaluationTask, Label, Sample
 from src.evaluation_tasks.exceptions import InvalidModelResponseError
 from src.evaluation_tasks.factory import create_evaluation_task
+from src.logger import get_logger
 
-logger = structlog.get_logger(__name__)
+logger = get_logger(__name__)
 
 
 class ExperimentRunner:
