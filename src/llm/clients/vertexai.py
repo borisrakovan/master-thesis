@@ -1,10 +1,14 @@
+import functools
+
 import vertexai
 from google.api_core.exceptions import ServerError, GoogleAPIError, TooManyRequests
 from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
-from vertexai.generative_models import GenerativeModel, Content, Part, GenerationConfig, GenerationResponse
+from vertexai.generative_models import GenerativeModel, Content, Part, GenerationConfig, \
+    HarmCategory, HarmBlockThreshold
 
 from src.llm.clients.base import LlmClient
 from src.llm.clients.utils import log_retry_error_attempt
+from src.llm.enums import ChatModel
 from src.llm.exceptions import LlmRateLimitError, LlmApiError
 from src.llm.schema import ChatCompletionParameters
 from src.llm.messages import Message, AIMessage, MessageRole
@@ -31,11 +35,11 @@ class VertexAIClient(LlmClient):
         messages: list[Message],
         parameters: ChatCompletionParameters
     ) -> AIMessage:
-        model = GenerativeModel(parameters.model)
+        model = self._create_model(parameters.model)
 
         @vertexai_retry
-        async def chat_completion() -> GenerationResponse:
-            return await model.generate_content_async(
+        async def chat_completion() -> str:
+            response = await model.generate_content_async(
                 contents=self._convert_messages(messages),
                 generation_config=GenerationConfig(
                     temperature=parameters.temperature,
@@ -43,6 +47,7 @@ class VertexAIClient(LlmClient):
                     stop_sequences=parameters.stop,
                 )
             )
+            return response.text
 
         try:
             completion = await chat_completion()
@@ -56,7 +61,19 @@ class VertexAIClient(LlmClient):
             logger.error(f"Error during VertexAI chat completion: {exc}", exc_info=True)
             raise LlmApiError(parameters.model) from exc
 
-        return AIMessage(content=completion.text)
+        return AIMessage(content=completion)
+
+    @classmethod
+    @functools.cache
+    def _create_model(cls, model: ChatModel) -> GenerativeModel:
+        safety_config = {
+            HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+            HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_NONE,
+            HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_NONE,
+            HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
+        }
+        return GenerativeModel(model, safety_settings=safety_config)
+
 
     @classmethod
     def _convert_messages(cls, messages: list[Message]) -> list[Content]:
@@ -91,7 +108,9 @@ class VertexAIClient(LlmClient):
 
 
 vertexai_retry = retry(
-    retry=retry_if_exception_type(ServerError),
+    # Sometimes GCP returns IndexError: list index out of range
+    # on return self.candidates[0].text (probably a wrongly handled rate limit error?)
+    retry=retry_if_exception_type((ServerError, TooManyRequests, IndexError)),
     stop=stop_after_attempt(settings.llm_max_retries),
     # This will wait 1s, 2s, 4s, 8s and so on
     wait=wait_exponential(min=1, max=60),
