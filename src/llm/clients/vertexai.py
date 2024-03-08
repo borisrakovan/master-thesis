@@ -110,7 +110,8 @@ class VertexAIClient(LlmClient):
 vertexai_retry = retry(
     # Sometimes GCP returns IndexError: list index out of range
     # on return self.candidates[0].text (probably a wrongly handled rate limit error?)
-    retry=retry_if_exception_type((ServerError, TooManyRequests, IndexError)),
+    # Sometimes it also returns ValueError: Content has no parts
+    retry=retry_if_exception_type((ServerError, TooManyRequests, IndexError, ValueError)),
     stop=stop_after_attempt(settings.llm_max_retries),
     # This will wait 1s, 2s, 4s, 8s and so on
     wait=wait_exponential(min=1, max=60),
