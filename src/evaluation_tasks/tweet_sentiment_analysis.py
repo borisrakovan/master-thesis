@@ -3,11 +3,11 @@ from typing import Iterator
 
 import requests
 from src.constants import DATA_DIRECTORY
+from src.evaluation_tasks.schema import Sample, SampleResult
 from src.llm.schema import ChatCompletionParameters
 from src.llm.enums import ChatModel
 from src.llm.prompt_template import PromptTemplate
 from src.evaluation_tasks.base import EvaluationTask
-from src.evaluation_tasks.exceptions import InvalidModelResponseError
 from src.evaluation_tasks.utils import first_word_occurrence
 from src.logger import get_logger
 
@@ -39,19 +39,25 @@ class TweetSentimentAnalysis(EvaluationTask):
     def num_samples(self) -> int:
         return self._NUM_DATASET_SAMPLES
 
-    def iter_samples(self) -> Iterator[tuple[str, str]]:
+    def iter_samples(self) -> Iterator[Sample[str, str]]:
         self._download()
         with self._DATASET_PATH.open() as f:
             reader = csv.DictReader(f)
             for row in reader:
                 # Capitalize the class name because LLMs are more likely to return a capitalized output
-                sample = row["text"]
-                label = row["airline_sentiment"].capitalize()
-                yield sample, label
+                yield Sample(
+                    input=row["text"],
+                    target=row["airline_sentiment"].capitalize()
+                )
 
-    async def evaluate_sample(self, sample: str, model: ChatModel, prompt: PromptTemplate) -> str:
+    async def evaluate_sample(
+        self,
+        sample: Sample[str, str],
+        model: ChatModel,
+        prompt: PromptTemplate
+    ) -> SampleResult[str, str]:
         response = await self._llm.create_chat_completion(
-            messages=[self._system_message, prompt.format(sample_text=sample)],
+            messages=[self._system_message, prompt.format(sample_text=sample.input)],
             parameters=ChatCompletionParameters(
                 model=model,
                 # Give the model enough tokens to output the class label
@@ -60,9 +66,10 @@ class TweetSentimentAnalysis(EvaluationTask):
             ),
         )
 
-        predicted_class = first_word_occurrence(response.content, self._CLASSES)
+        prediction = first_word_occurrence(response.content, self._CLASSES)
 
-        if predicted_class is None:
-            raise InvalidModelResponseError(model, response.content)
-
-        return predicted_class
+        return SampleResult(
+            sample=sample,
+            prediction=prediction,
+            llm_response=response.content,
+        )

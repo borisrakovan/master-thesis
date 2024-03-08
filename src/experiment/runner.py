@@ -4,15 +4,14 @@ from datetime import datetime
 
 import numpy as np
 
+from src.evaluation_tasks.schema import Sample, SampleResult
 from src.experiment.schema import ExperimentDefinition, ExperimentRun, ExperimentRunnerOptions, UserPrompt
 from src.experiment.utils import batched, random_sample
 from src.llm.service import LlmService
 from src.llm.enums import ChatModel
 from src.llm.prompt_template import PromptTemplate
-from src.experiment.result import EvaluationResult, ModelResult
-from src.evaluation_tasks.schema import ValidSampleResult, InvalidSampleResult
-from src.evaluation_tasks.base import EvaluationTask, Label, Sample
-from src.evaluation_tasks.exceptions import InvalidModelResponseError
+from src.experiment.result import EvaluationResult, ModelResult, EvaluatedSamples
+from src.evaluation_tasks.base import EvaluationTask
 from src.evaluation_tasks.factory import create_evaluation_task
 from src.logger import get_logger
 
@@ -70,7 +69,7 @@ class ExperimentRunner:
         self,
         model: ChatModel,
         evaluation_task: EvaluationTask,
-        samples: list[tuple[Sample, Label]],
+        samples: list[Sample],
         user_prompts: list[UserPrompt],
     ) -> ModelResult:
         prompt_results: dict[str, EvaluationResult] = {}
@@ -84,7 +83,7 @@ class ExperimentRunner:
         self,
         model: ChatModel,
         evaluation_task: EvaluationTask,
-        samples: list[tuple[Sample, Label]],
+        samples: list[Sample],
         prompt: PromptTemplate,
     ) -> EvaluationResult:
         # Batch the samples into groups executed concurrently
@@ -93,37 +92,24 @@ class ExperimentRunner:
         invalid_samples, correct_samples, incorrect_samples = [], [], []
 
         for sample_batch in sample_batches:
-            samples, labels = zip(*sample_batch)
-            # TODO: use asyncio.TaskGroup (handle partial exceptions better)
-            results: tuple[Label | BaseException] = await asyncio.gather(
-                *[evaluation_task.evaluate_sample(sample, model, prompt) for sample in samples],
-                return_exceptions=True,
-            )
-            for idx, result in enumerate(results):
-                # Propagate unexpected exceptions
-                if isinstance(result, Exception) and not isinstance(result, InvalidModelResponseError):
-                    raise result
 
-                if isinstance(result, InvalidModelResponseError):
-                    sample_result = InvalidSampleResult(
-                        sample=samples[idx],
-                        label=labels[idx],
-                        response=result.response,
-                    )
-                    invalid_samples.append(sample_result)
+            results: tuple[SampleResult] = await asyncio.gather(
+                *[evaluation_task.evaluate_sample(sample, model, prompt) for sample in sample_batch]
+            )
+
+            for idx, result in enumerate(results):
+
+                if not result.is_valid:
+                    invalid_samples.append(result)
+                elif not result.is_correct:
+                    incorrect_samples.append(result)
                 else:
-                    sample_result = ValidSampleResult(
-                        sample=samples[idx],
-                        label=labels[idx],
-                        predicted=result,
-                    )
-                    if result == labels[idx]:
-                        correct_samples.append(sample_result)
-                    else:
-                        incorrect_samples.append(sample_result)
+                    correct_samples.append(result)
 
         return EvaluationResult(
-            correct_samples=correct_samples,
-            incorrect_samples=incorrect_samples,
-            invalid_samples=invalid_samples,
+            samples=EvaluatedSamples(
+                correct=correct_samples,
+                incorrect=incorrect_samples,
+                invalid=invalid_samples,
+            )
         )

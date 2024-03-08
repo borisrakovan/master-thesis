@@ -1,22 +1,21 @@
 import csv
 from typing import Iterator
 
-import structlog
 from src.constants import DATA_DIRECTORY
+from src.evaluation_tasks.schema import Sample, SampleResult
 from src.evaluation_tasks.utils import first_word_occurrence
-from src.llm.client import ChatCompletionParameters
+from src.llm.schema import ChatCompletionParameters
 from src.llm.enums import ChatModel
 from src.llm.prompt_template import PromptTemplate
 from src.evaluation_tasks.base import EvaluationTask
-from src.evaluation_tasks.exceptions import InvalidModelResponseError
 from src.logger import get_logger
 
 
 logger = get_logger(__name__)
 
 
-class IMDbSentimentAnalysis(EvaluationTask):
-    """Twitter Airlines Sentiment Analysis classification task"""
+class IMDbSentimentAnalysis(EvaluationTask[str, str]):
+    """IMDB Sentiment Analysis classification task"""
 
     _SOURCE_URL = "https://www.kaggle.com/datasets/columbine/imdb-dataset-sentiment-analysis-in-csv-format/download?datasetVersionNumber=1"  # noqa
     _CLASSES = ["Positive", "Negative"]
@@ -28,17 +27,23 @@ class IMDbSentimentAnalysis(EvaluationTask):
     def num_samples(self) -> int:
         return self._NUM_DATASET_SAMPLES
 
-    def iter_samples(self) -> Iterator[tuple[str, str]]:
+    def iter_samples(self) -> Iterator[Sample[str, str]]:
         with self._DATASET_PATH.open(encoding="utf-8-sig") as f:
             reader = csv.DictReader(f)
             for row in reader:
-                sample = row["text"]
-                label = "Positive" if int(row["label"]) == 1 else "Negative"
-                yield sample, label
+                yield Sample(
+                    input=row["text"],
+                    target="Positive" if int(row["label"]) == 1 else "Negative",
+                )
 
-    async def evaluate(self, sample: str, model: ChatModel, prompt: PromptTemplate) -> str:
-        response = await self._llm_client.create_chat_completion(
-            messages=[self._system_message, prompt.format(sample_text=sample)],
+    async def evaluate_sample(
+        self,
+        sample: Sample[str, str],
+        model: ChatModel,
+        prompt: PromptTemplate
+    ) -> SampleResult[str, str]:
+        response = await self._llm.create_chat_completion(
+            messages=[self._system_message, prompt.format(sample_text=sample.input)],
             parameters=ChatCompletionParameters(
                 model=model,
                 # Give the model enough tokens to output the class label
@@ -47,10 +52,10 @@ class IMDbSentimentAnalysis(EvaluationTask):
             )
         )
 
-        # Convert the gold label to the class name
-        predicted_class = first_word_occurrence(response.content, self._CLASSES)
+        prediction = first_word_occurrence(response.content, self._CLASSES)
 
-        if predicted_class not in self._CLASSES:
-            raise InvalidModelResponseError(model, response.content)
-
-        return predicted_class
+        return SampleResult(
+            sample=sample,
+            prediction=prediction,
+            llm_response=response.content,
+        )

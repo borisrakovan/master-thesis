@@ -18,7 +18,7 @@ class SampleResult(BaseModel, Generic[TInput, TTarget]):
     sample: Sample[TInput, TTarget]
     # None if model generated invalid response
     prediction: TTarget | None
-    model_response: str
+    llm_response: str
 
     @property
     def is_valid(self) -> bool:

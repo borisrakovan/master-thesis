@@ -1,20 +1,22 @@
 from abc import abstractmethod, ABC
-from typing import Iterator, Any
+from typing import Iterator, TypeVar, Generic
 
-from src.llm.client import LlmClient
+from src.evaluation_tasks.schema import SampleResult, Sample
+from src.llm.service import LlmService
 from src.llm.enums import ChatModel
 from src.llm.messages import Message
 from src.llm.prompt_template import PromptTemplate
 
-Sample = Any
-Label = Any
+
+TInput = TypeVar("TInput")
+TTarget = TypeVar("TTarget")
 
 
-class EvaluationTask(ABC):
+class EvaluationTask(ABC, Generic[TInput, TTarget]):
     """Abstract class representing an evaluation benchmark"""
 
-    def __init__(self, llm_client: LlmClient, system_message: Message):
-        self._llm_client = llm_client
+    def __init__(self, llm: LlmService, system_message: Message):
+        self._llm = llm
         self._system_message = system_message
 
     @property
@@ -24,11 +26,16 @@ class EvaluationTask(ABC):
         ...
 
     @abstractmethod
-    def iter_samples(self) -> Iterator[tuple[Sample, Label]]:
+    def iter_samples(self) -> Iterator[Sample[TInput, TTarget]]:
         """Return an iterator over the individual task samples"""
         ...
 
     @abstractmethod
-    async def evaluate(self, sample: Sample, model: ChatModel, prompt: PromptTemplate) -> Label:
-        """Evaluate the model on a single sample using the given prompt and return boolean indicating success"""
+    async def evaluate_sample(
+        self,
+        sample: Sample[TInput, TTarget],
+        model: ChatModel,
+        prompt: PromptTemplate
+    ) -> SampleResult[TInput, TTarget]:
+        """Evaluate the model on a single sample using the given prompt"""
         ...
