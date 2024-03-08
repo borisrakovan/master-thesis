@@ -8,3 +8,6 @@ class ChatModel(StrEnum):
     LLAMA_7B = "meta-llama/Llama-2-7b-chat-hf"
     LLAMA_13B = "meta-llama/Llama-2-13b-chat-hf"
     LLAMA_70B = "meta-llama/Llama-2-70b-chat-hf"
+
+    GEMINI_PRO = "gemini-1.0-pro"
+    PaLM_2 = "chat-bison@002"

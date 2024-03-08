@@ -1,6 +1,10 @@
+from dotenv import load_dotenv
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from src.llm.enums import ChatModel
+
+# Load google application credentials
+load_dotenv()
 
 
 class Settings(BaseSettings):
@@ -13,11 +17,17 @@ class Settings(BaseSettings):
     anyscale_api_base: str = "https://api.endpoints.anyscale.com/v1"
     anyscale_api_key: str
 
+    google_application_credentials: str
+    vertexai_project_id: str = "valid-volt-411420"
+    vertexai_location: str = "us-central1"
+    # vertexai_location: str = "eu-central1"
+    # vertexai_location: str = "europe-west2"
+
     llm_temperature: float = 0.0
     llm_max_tokens: int = 1000
     llm_model: ChatModel = ChatModel.GPT_35
-    llm_max_retries: int = 3
-    llm_timeout: int = 10
+    llm_max_retries: int = 10
+    llm_timeout: int = 15
 
     accuracy_confidence_interval_level: float = 0.95
 

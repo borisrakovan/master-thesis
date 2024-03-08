@@ -1,10 +1,9 @@
 import csv
 from typing import Iterator
 
-import structlog
 import requests
 from src.constants import DATA_DIRECTORY
-from src.llm.client import ChatCompletionParameters
+from src.llm.schema import ChatCompletionParameters
 from src.llm.enums import ChatModel
 from src.llm.prompt_template import PromptTemplate
 from src.evaluation_tasks.base import EvaluationTask
@@ -50,8 +49,8 @@ class TweetSentimentAnalysis(EvaluationTask):
                 label = row["airline_sentiment"].capitalize()
                 yield sample, label
 
-    async def evaluate(self, sample: str, model: ChatModel, prompt: PromptTemplate) -> str:
-        response = await self._llm_client.create_chat_completion(
+    async def evaluate_sample(self, sample: str, model: ChatModel, prompt: PromptTemplate) -> str:
+        response = await self._llm.create_chat_completion(
             messages=[self._system_message, prompt.format(sample_text=sample)],
             parameters=ChatCompletionParameters(
                 model=model,

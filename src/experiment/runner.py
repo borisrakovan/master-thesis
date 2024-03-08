@@ -3,15 +3,14 @@ from collections import defaultdict
 from datetime import datetime
 
 import numpy as np
-import structlog
 
 from src.experiment.schema import ExperimentDefinition, ExperimentRun, ExperimentRunnerOptions, UserPrompt
 from src.experiment.utils import batched, random_sample
-from src.llm.client import LlmClient
+from src.llm.service import LlmService
 from src.llm.enums import ChatModel
 from src.llm.prompt_template import PromptTemplate
-from src.experiment.result import EvaluationResult, ModelResult, ValidSampleResult, \
-    InvalidSampleResult
+from src.experiment.result import EvaluationResult, ModelResult
+from src.evaluation_tasks.schema import ValidSampleResult, InvalidSampleResult
 from src.evaluation_tasks.base import EvaluationTask, Label, Sample
 from src.evaluation_tasks.exceptions import InvalidModelResponseError
 from src.evaluation_tasks.factory import create_evaluation_task
@@ -27,18 +26,18 @@ class ExperimentRunner:
     _MAX_MODEL_API_CONCURRENCY = defaultdict(
         lambda: 10,
         {
-            ChatModel.GPT_35: 1,
+            ChatModel.GPT_35: 10,
             ChatModel.GPT_4: 5,
         },
     )
 
-    def __init__(self, llm_client: LlmClient, options: ExperimentRunnerOptions):
-        self._llm_client = llm_client
+    def __init__(self, llm: LlmService, options: ExperimentRunnerOptions):
+        self._llm = llm
         self._options = options
         self._rng = np.random.default_rng(options.random_seed)
 
     async def run(self, experiment: ExperimentDefinition) -> ExperimentRun:
-        evaluation_task = create_evaluation_task(experiment, llm_client=self._llm_client)
+        evaluation_task = create_evaluation_task(experiment, llm=self._llm)
 
         sample_iterator = evaluation_task.iter_samples()
         samples = list(
@@ -64,7 +63,7 @@ class ExperimentRunner:
             options=self._options,
             experiment=experiment,
             results=results,
-            llm_stats=self._llm_client.statistics,
+            llm_stats=self._llm.collect_statistics(),
         )
 
     async def _run_for_model(
@@ -97,10 +96,9 @@ class ExperimentRunner:
             samples, labels = zip(*sample_batch)
             # TODO: use asyncio.TaskGroup (handle partial exceptions better)
             results: tuple[Label | BaseException] = await asyncio.gather(
-                *[evaluation_task.evaluate(sample, model, prompt) for sample in samples],
+                *[evaluation_task.evaluate_sample(sample, model, prompt) for sample in samples],
                 return_exceptions=True,
             )
-            # TODO: move this part to evaluation task (maybe inherit from classification task later
             for idx, result in enumerate(results):
                 # Propagate unexpected exceptions
                 if isinstance(result, Exception) and not isinstance(result, InvalidModelResponseError):
