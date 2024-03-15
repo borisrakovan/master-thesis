@@ -18,8 +18,10 @@ class Settings(BaseSettings):
     anyscale_api_key: str
 
     google_application_credentials: str
-    vertexai_project_id: str = "valid-volt-411420"
+    vertexai_project_id: str = "famous-rhythm-417205"
     vertexai_location: str = "us-central1"
+    # vertexai_project_id: str = "valid-volt-411420"
+    # vertexai_location: str = "us-central1"
     # vertexai_location: str = "eu-central1"
     # vertexai_location: str = "europe-west2"
 

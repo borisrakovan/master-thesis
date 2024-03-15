@@ -1,10 +1,10 @@
-from src.experiment.schema import ExperimentDefinition
-from src.llm.clients.base import LlmClient
-from src.llm.service import LlmService
+from src.evaluation_tasks.arc_multiple_choice_qa import ARCMultipleChoiceQA
 from src.evaluation_tasks.base import EvaluationTask
 from src.evaluation_tasks.enums import TaskType
 from src.evaluation_tasks.imdb_sentiment_analysis import IMDbSentimentAnalysis
 from src.evaluation_tasks.tweet_sentiment_analysis import TweetSentimentAnalysis
+from src.experiment.schema import ExperimentDefinition
+from src.llm.service import LlmService
 
 
 def create_evaluation_task(experiment: ExperimentDefinition, llm: LlmService) -> EvaluationTask:
@@ -14,5 +14,7 @@ def create_evaluation_task(experiment: ExperimentDefinition, llm: LlmService) ->
         return TweetSentimentAnalysis(llm=llm, system_message=system_message)
     elif experiment.task_type == TaskType.IMDB_SENTIMENT_ANALYSIS:
         return IMDbSentimentAnalysis(llm=llm, system_message=system_message)
+    elif experiment.task_type == TaskType.ARC_MULTIPLE_CHOICE_QA:
+        return ARCMultipleChoiceQA(llm=llm, system_message=system_message)
     else:
         raise NotImplementedError(f"Task type {experiment.task_type} is not implemented")
