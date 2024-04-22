@@ -54,11 +54,10 @@ def make_experiment_result_table(experiment_run: ExperimentRun) -> str:
 async def main() -> None:
 
     llm = LlmService()
-    runner_options = ExperimentRunnerOptions(random_seed=46, num_samples=100)
+    runner_options = ExperimentRunnerOptions(random_seed=46, num_samples=10)
     runner = ExperimentRunner(llm=llm, options=runner_options)
     experiment = ExperimentDefinition.from_file(
-        PROJECT_ROOT / "experiments" / "instruction_context_separation_arc.yml"
-        # PROJECT_ROOT / "experiments" / "instruction_itemization_imdb.yml"
+        PROJECT_ROOT / "experiments" / "instruction_context_separation_cosmos.yml"
     )
     experiment_run = await runner.run(experiment)
 

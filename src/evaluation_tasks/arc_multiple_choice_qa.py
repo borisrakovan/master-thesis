@@ -1,11 +1,11 @@
-import re
-from typing import Iterator, TypeAlias
+from typing import Iterator, TypeAlias, Literal
 
 from datasets import load_dataset
 from pydantic import BaseModel
 
 from src.evaluation_tasks.base import EvaluationTask
 from src.evaluation_tasks.schema import Sample, SampleResult
+from src.evaluation_tasks.utils import parse_qa_label_from_response
 from src.llm.enums import ChatModel
 from src.llm.messages import Message
 from src.llm.prompt_template import PromptTemplate
@@ -13,34 +13,12 @@ from src.llm.schema import ChatCompletionParameters
 from src.llm.service import LlmService
 
 
-ArcTarget: TypeAlias = str
+ArcTarget: TypeAlias = Literal['A', 'B', 'C', 'D', 'E']
 
 
 class ArcInput(BaseModel):
     question: str
     choices: dict[ArcTarget, str]
-
-
-def parse_label_from_response(response: str) -> str | None:
-    # First, look for patterns like 'X:'
-    pattern_1 = re.compile(r'\b([ABCDE]):')
-    match = pattern_1.search(response)
-    if match:
-        return match.group(1)
-
-    # If not found, look for patterns like '(X)'
-    pattern_2 = re.compile(r'\(([ABCDE])\)')
-    match = pattern_2.search(response)
-    if match:
-        return match.group(1)
-
-    # If not found, look for 'X' with specific follow-up characters to minimize false positives
-    pattern_2 = re.compile(fr'\b([ABCDE])([\s,.])?')
-    match = pattern_2.search(response)
-    if match:
-        return match.group(1)
-
-    return None
 
 
 class ARCMultipleChoiceQA(EvaluationTask[ArcInput, ArcTarget]):
@@ -95,7 +73,7 @@ class ARCMultipleChoiceQA(EvaluationTask[ArcInput, ArcTarget]):
             ),
         )
 
-        prediction = parse_label_from_response(response.content.strip())
+        prediction = parse_qa_label_from_response(response.content.strip())
 
         return SampleResult(
             sample=sample,

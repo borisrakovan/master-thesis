@@ -30,7 +30,7 @@ class OpenAISDKClient(LlmClient):
     async def create_chat_completion(
         self, messages: list[Message], parameters: ChatCompletionParameters
     ) -> AIMessage:
-        """Fetch a chat completion using the specified parameters"""
+        """Fetch a chat completion using the specified parameters."""
 
         @openai_retry
         async def chat_completion() -> ChatCompletion:

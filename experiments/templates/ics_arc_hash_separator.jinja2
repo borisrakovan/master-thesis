@@ -1,0 +1,9 @@
+Select the correct answer by choosing the appropriate label (e.g., A, B, C, D, E).
+
+###
+
+Question: {{ input.question }}
+
+{% for label, text in input.choices.items() %}
+{{ label }}: {{ text }}
+{% endfor %}

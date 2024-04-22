@@ -74,7 +74,6 @@ class VertexAIClient(LlmClient):
         }
         return GenerativeModel(model, safety_settings=safety_config)
 
-
     @classmethod
     def _convert_messages(cls, messages: list[Message]) -> list[Content]:
 

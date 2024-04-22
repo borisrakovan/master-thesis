@@ -42,7 +42,7 @@
                             "label": "Neutral",
                             "predicted": "Neutral"
                         },
-                        {
+                      {
                             "sample": "@VirginAmerica I emailed your customer service team. Let me know if you need the tracking number.",
                             "label": "Neutral",
                             "predicted": "Neutral"

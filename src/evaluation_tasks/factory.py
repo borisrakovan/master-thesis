@@ -1,5 +1,6 @@
 from src.evaluation_tasks.arc_multiple_choice_qa import ARCMultipleChoiceQA
 from src.evaluation_tasks.base import EvaluationTask
+from src.evaluation_tasks.cosmos_multiple_choice_qa import CosmosMultipleChoiceQA
 from src.evaluation_tasks.enums import TaskType
 from src.evaluation_tasks.imdb_sentiment_analysis import IMDbSentimentAnalysis
 from src.evaluation_tasks.tweet_sentiment_analysis import TweetSentimentAnalysis
@@ -16,5 +17,7 @@ def create_evaluation_task(experiment: ExperimentDefinition, llm: LlmService) ->
         return IMDbSentimentAnalysis(llm=llm, system_message=system_message)
     elif experiment.task_type == TaskType.ARC_MULTIPLE_CHOICE_QA:
         return ARCMultipleChoiceQA(llm=llm, system_message=system_message)
+    elif experiment.task_type == TaskType.COSMOS_MULTIPLE_CHOICE_QA:
+        return CosmosMultipleChoiceQA(llm=llm, system_message=system_message)
     else:
         raise NotImplementedError(f"Task type {experiment.task_type} is not implemented")

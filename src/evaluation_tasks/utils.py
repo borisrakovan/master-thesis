@@ -17,3 +17,25 @@ def first_word_occurrence(text: str, words: list[str]) -> str | None:
         if word.lower() in words_set:
             return word
     return None
+
+
+def parse_qa_label_from_response(response: str) -> str | None:
+    # First, look for patterns like 'X:'
+    pattern_1 = re.compile(r'\b([ABCDE]):')
+    match = pattern_1.search(response)
+    if match:
+        return match.group(1)
+
+    # If not found, look for patterns like '(X)'
+    pattern_2 = re.compile(r'\(([ABCDE])\)')
+    match = pattern_2.search(response)
+    if match:
+        return match.group(1)
+
+    # If not found, look for 'X' with specific follow-up characters to minimize false positives
+    pattern_2 = re.compile(fr'\b([ABCDE])([\s,.])?')
+    match = pattern_2.search(response)
+    if match:
+        return match.group(1)
+
+    return None

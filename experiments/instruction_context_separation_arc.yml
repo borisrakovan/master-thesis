@@ -6,13 +6,14 @@ models:
   - "meta-llama/Llama-2-13b-chat-hf"
   - "meta-llama/Llama-2-70b-chat-hf"
   - "gpt-3.5-turbo-0613"
-  - "gemini-1.0-pro"
+# todo finish for gemini too (majority of 500 cached)
+#  - "gemini-1.0-pro"
 prompts:
   system: "arc_system.jinja2"
   user:
     - name: "Baseline"
       file: "ics_arc_baseline.jinja2"
-#    - name: "Hash separator"
-#      file: "ics_arc_hash_separator.jinja2"
-#    - name: "Triple quote separator"
-#      file: "ics_arc_triple_quote_separator.jinja2"
+    - name: "Hash separator"
+      file: "ics_arc_hash_separator.jinja2"
+    - name: "Triple quote separator"
+      file: "ics_arc_triple_quote_separator.jinja2"

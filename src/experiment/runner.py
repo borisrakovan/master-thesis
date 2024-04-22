@@ -27,6 +27,7 @@ class ExperimentRunner:
         {
             ChatModel.GPT_35: 10,
             ChatModel.GPT_4: 5,
+            ChatModel.GEMINI_PRO: 5,
         },
     )
 
