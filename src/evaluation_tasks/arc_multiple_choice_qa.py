@@ -1,6 +1,6 @@
 from typing import Iterator, TypeAlias, Literal
 
-from datasets import load_dataset
+from datasets import load_dataset, concatenate_datasets
 from pydantic import BaseModel
 
 from src.evaluation_tasks.base import EvaluationTask
@@ -27,7 +27,10 @@ class ARCMultipleChoiceQA(EvaluationTask[ArcInput, ArcTarget]):
 
     def __init__(self, llm: LlmService, system_message: Message):
         super().__init__(llm, system_message)
-        self.dataset = load_dataset("allenai/ai2_arc", "ARC-Challenge")["train"]
+        dataset = load_dataset("allenai/ai2_arc", "ARC-Challenge")
+        self.dataset = concatenate_datasets(
+            [dataset["train"], dataset["test"], dataset["validation"]]
+        )
 
     @property
     def num_samples(self) -> int:

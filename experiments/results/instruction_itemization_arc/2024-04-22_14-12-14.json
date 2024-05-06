@@ -1,0 +1,1574 @@
+{
+    "experiment": {
+        "slug": "instruction_itemization_arc",
+        "name": "Instruction itemization ARC multiple choice QA",
+        "experiment_type": "INSTRUCTION_ITEMIZATION",
+        "task_type": "ARC_MULTIPLE_CHOICE_QA",
+        "models": [
+            "meta-llama/Llama-2-7b-chat-hf",
+            "meta-llama/Llama-2-13b-chat-hf",
+            "meta-llama/Llama-2-70b-chat-hf",
+            "gpt-3.5-turbo-0613"
+        ],
+        "prompts": {
+            "user": [
+                {
+                    "name": "Baseline"
+                },
+                {
+                    "name": "Itemized"
+                }
+            ]
+        }
+    },
+    "options": {
+        "random_seed": 46,
+        "num_samples": 10
+    },
+    "results": {
+        "meta-llama/Llama-2-7b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these activities is used to conserve water?",
+                                        "choices": {
+                                            "A": "planting crops that survive in droughts",
+                                            "B": "running water while brushing teeth",
+                                            "C": "washing vehicles frequently",
+                                            "D": "watering grass after a rainfall"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is (A): planting crops that survive in droughts."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some students used a hot plate to heat 1 L of water from 20°C to the boiling point of water. The students recorded the temperature of the water each minute until it began to boil. Which of the following provides the most appropriate way to represent the data?",
+                                        "choices": {
+                                            "A": "a bar graph with temperature on the y-axis and time on the x-axis",
+                                            "B": "a bar graph with time on the y-axis and temperature on the x-axis",
+                                            "C": "a line graph with temperature on the y-axis and time on the x-axis",
+                                            "D": "a line graph with time on the y-axis and temperature on the x-axis"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C): a line graph with temperature on the y-axis and time on the x-axis."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some businesses offer customers the option to pay for merchandise using their fingerprints as identification. Which of the following would most benefit customers that use this new technology?",
+                                        "choices": {
+                                            "A": "cost of product is reduced",
+                                            "B": "protection of private information",
+                                            "C": "ability to track customer preferences",
+                                            "D": "funds would be credited immediately"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  Based on the information provided in the question, the correct answer is:\nB: protection of private information.\nThis new technology allows customers to pay for merchandise using their fingerprints as identification, which provides an additional layer of security and protection for their private information."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "During a lecture, a professor was talking about the potential that hydrogen has for exploding under certain conditions. Which was most likely the topic of the professor's lecture?",
+                                        "choices": {
+                                            "A": "Conductivity of Gases",
+                                            "B": "Phase Changes in Matter",
+                                            "C": "Chemical Properties of Gases",
+                                            "D": "Physical Properties of Elements"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C): Chemical Properties of Gases."
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which is true about reproduction for both an amoeba and a paramecium?",
+                                        "choices": {
+                                            "A": "Both can conjugate.",
+                                            "B": "Neither can conjugate.",
+                                            "C": "An amoeba can conjugate, but a paramecium cannot.",
+                                            "D": "A paramecium can conjugate, but an amoeba cannot."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C): An amoeba can conjugate, but a paramecium cannot."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A poultry egg is dissected in science class. What is the clear, thick fluid inside the poultry egg that serves as protection for the embryo?",
+                                        "choices": {
+                                            "A": "Yolk",
+                                            "B": "Shell",
+                                            "C": "Yolk sac",
+                                            "D": "Albumen"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is (A) Yolk."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A town built a road through a forest. Deer live in the forest on both sides of the road. Which would not help protect deer from the cars on the road?",
+                                        "choices": {
+                                            "A": "feeders on the side of the road",
+                                            "B": "lights along the side of the road",
+                                            "C": "signs telling drivers to be careful of deer",
+                                            "D": "bridges that let the deer walk under the road"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: signs telling drivers to be careful of deer.\nExplanation: Signs are not a physical barrier that can prevent cars from hitting deer, so they would not help protect the deer from the cars on the road."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When placed in direct sunlight, which object will absorb the most visible light energy?",
+                                        "choices": {
+                                            "A": "a piece of clear glass",
+                                            "B": "a snowball",
+                                            "C": "a shiny mirror",
+                                            "D": "a black sweater"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  Based on the information provided in the question, the correct answer is:\nA: a piece of clear glass.\n\nExplanation: When placed in direct sunlight, a piece of clear glass will absorb the most visible light energy because it allows the most light to pass through it. The other options (snowball, shiny mirror, black sweater) will absorb less visible light energy because they reflect or absorb some of the light."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "If a fox and an eagle eat some of the same organisms in an ecosystem, the relationship between the fox and the eagle could be classified as",
+                                        "choices": {
+                                            "A": "competition.",
+                                            "B": "mutualism.",
+                                            "C": "predation.",
+                                            "D": "parasitism."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C) predation.\nExplanation:\nWhen a fox and an eagle eat some of the same organisms in an ecosystem, their relationship can be classified as predation. Predation is a trophic relationship in which one organism, the predator, feeds on another organism, the prey. In this case, the fox and the eagle are both feeding on the same organisms, which means"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which characteristic does a paramecium have in common with volvox?",
+                                        "choices": {
+                                            "A": "able to produce gametes",
+                                            "B": "can perform photosynthesis",
+                                            "C": "has an organelle for movement",
+                                            "D": "lives as one of a colony of cells"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Based on the information provided in the question, the correct answer is:\nD: lives as one of a colony of cells\n\nBoth paramecia and volvox are single-celled organisms that live as part of a colony of cells. Therefore, option D is the correct answer."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 4,
+                        "num_incorrect": 6,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.4,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.1,
+                                0.7
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.3
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 9220,
+                            "±3%": 1024,
+                            "±5%": 369
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these activities is used to conserve water?",
+                                        "choices": {
+                                            "A": "planting crops that survive in droughts",
+                                            "B": "running water while brushing teeth",
+                                            "C": "washing vehicles frequently",
+                                            "D": "watering grass after a rainfall"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is (A): planting crops that survive in droughts. Therefore, my response is A."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some students used a hot plate to heat 1 L of water from 20°C to the boiling point of water. The students recorded the temperature of the water each minute until it began to boil. Which of the following provides the most appropriate way to represent the data?",
+                                        "choices": {
+                                            "A": "a bar graph with temperature on the y-axis and time on the x-axis",
+                                            "B": "a bar graph with time on the y-axis and temperature on the x-axis",
+                                            "C": "a line graph with temperature on the y-axis and time on the x-axis",
+                                            "D": "a line graph with time on the y-axis and temperature on the x-axis"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C): a line graph with temperature on the y-axis and time on the x-axis."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some businesses offer customers the option to pay for merchandise using their fingerprints as identification. Which of the following would most benefit customers that use this new technology?",
+                                        "choices": {
+                                            "A": "cost of product is reduced",
+                                            "B": "protection of private information",
+                                            "C": "ability to track customer preferences",
+                                            "D": "funds would be credited immediately"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  Based on the information provided in the question, the correct answer is:\nB: protection of private information.\nThis new technology allows customers to pay for merchandise using their fingerprints as identification, which provides an additional layer of security and protection for their private information."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "During a lecture, a professor was talking about the potential that hydrogen has for exploding under certain conditions. Which was most likely the topic of the professor's lecture?",
+                                        "choices": {
+                                            "A": "Conductivity of Gases",
+                                            "B": "Phase Changes in Matter",
+                                            "C": "Chemical Properties of Gases",
+                                            "D": "Physical Properties of Elements"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C): Chemical Properties of Gases."
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which is true about reproduction for both an amoeba and a paramecium?",
+                                        "choices": {
+                                            "A": "Both can conjugate.",
+                                            "B": "Neither can conjugate.",
+                                            "C": "An amoeba can conjugate, but a paramecium cannot.",
+                                            "D": "A paramecium can conjugate, but an amoeba cannot."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: An amoeba can conjugate, but a paramecium cannot."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A poultry egg is dissected in science class. What is the clear, thick fluid inside the poultry egg that serves as protection for the embryo?",
+                                        "choices": {
+                                            "A": "Yolk",
+                                            "B": "Shell",
+                                            "C": "Yolk sac",
+                                            "D": "Albumen"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is:\nA: Yolk"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A town built a road through a forest. Deer live in the forest on both sides of the road. Which would not help protect deer from the cars on the road?",
+                                        "choices": {
+                                            "A": "feeders on the side of the road",
+                                            "B": "lights along the side of the road",
+                                            "C": "signs telling drivers to be careful of deer",
+                                            "D": "bridges that let the deer walk under the road"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: signs telling drivers to be careful of deer.\nExplanation: While feeders, lights, and bridges can help protect deer from cars, signs are not a practical solution as they do not directly address the issue of cars on the road. Signs may remind drivers to be careful, but they do not physically prevent cars from hitting deer. Therefore, option C is the correct answer."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When placed in direct sunlight, which object will absorb the most visible light energy?",
+                                        "choices": {
+                                            "A": "a piece of clear glass",
+                                            "B": "a snowball",
+                                            "C": "a shiny mirror",
+                                            "D": "a black sweater"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is:\nA: a piece of clear glass\n\nExplanation: When placed in direct sunlight, a piece of clear glass will absorb the most visible light energy due to its transparency and ability to transmit light. The other options (snowball, shiny mirror, black sweater) will not absorb as much visible light energy as the glass, as they have different optical properties that scatter or absorb light to varying degrees."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "If a fox and an eagle eat some of the same organisms in an ecosystem, the relationship between the fox and the eagle could be classified as",
+                                        "choices": {
+                                            "A": "competition.",
+                                            "B": "mutualism.",
+                                            "C": "predation.",
+                                            "D": "parasitism."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C) predation."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which characteristic does a paramecium have in common with volvox?",
+                                        "choices": {
+                                            "A": "able to produce gametes",
+                                            "B": "can perform photosynthesis",
+                                            "C": "has an organelle for movement",
+                                            "D": "lives as one of a colony of cells"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Based on the information provided in the question, the correct answer is:\nD: lives as one of a colony of cells\n\nTherefore, the answer is D."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 4,
+                        "num_incorrect": 6,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.4,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.1,
+                                0.7
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.3
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 9220,
+                            "±3%": 1024,
+                            "±5%": 369
+                        }
+                    }
+                }
+            }
+        },
+        "meta-llama/Llama-2-13b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A poultry egg is dissected in science class. What is the clear, thick fluid inside the poultry egg that serves as protection for the embryo?",
+                                        "choices": {
+                                            "A": "Yolk",
+                                            "B": "Shell",
+                                            "C": "Yolk sac",
+                                            "D": "Albumen"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! The correct answer is D: Albumen."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When placed in direct sunlight, which object will absorb the most visible light energy?",
+                                        "choices": {
+                                            "A": "a piece of clear glass",
+                                            "B": "a snowball",
+                                            "C": "a shiny mirror",
+                                            "D": "a black sweater"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Based on the information provided, the correct answer is:\n\nD: a black sweater"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some students used a hot plate to heat 1 L of water from 20°C to the boiling point of water. The students recorded the temperature of the water each minute until it began to boil. Which of the following provides the most appropriate way to represent the data?",
+                                        "choices": {
+                                            "A": "a bar graph with temperature on the y-axis and time on the x-axis",
+                                            "B": "a bar graph with time on the y-axis and temperature on the x-axis",
+                                            "C": "a line graph with temperature on the y-axis and time on the x-axis",
+                                            "D": "a line graph with time on the y-axis and temperature on the x-axis"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\n\nC: a line graph with temperature on the y-axis and time on the x-axis.\n\nExplanation: A line graph is the most appropriate way to represent the data because it allows for a continuous representation of the temperature over time, which is the focus of the experiment. The other options (bar graph with time on the y-axis, bar graph with temperature on the y-axis, and line graph with time on the y-"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some businesses offer customers the option to pay for merchandise using their fingerprints as identification. Which of the following would most benefit customers that use this new technology?",
+                                        "choices": {
+                                            "A": "cost of product is reduced",
+                                            "B": "protection of private information",
+                                            "C": "ability to track customer preferences",
+                                            "D": "funds would be credited immediately"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  Sure! Based on the information provided in the question, the correct answer is:\n\nB: protection of private information.\n\nUsing fingerprints as identification would provide an additional layer of security and protect customers' private information, such as their financial information, more securely than traditional payment methods."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "During a lecture, a professor was talking about the potential that hydrogen has for exploding under certain conditions. Which was most likely the topic of the professor's lecture?",
+                                        "choices": {
+                                            "A": "Conductivity of Gases",
+                                            "B": "Phase Changes in Matter",
+                                            "C": "Chemical Properties of Gases",
+                                            "D": "Physical Properties of Elements"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: Chemical Properties of Gases"
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these activities is used to conserve water?",
+                                        "choices": {
+                                            "A": "planting crops that survive in droughts",
+                                            "B": "running water while brushing teeth",
+                                            "C": "washing vehicles frequently",
+                                            "D": "watering grass after a rainfall"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! The correct answer is:\n\nD: watering grass after a rainfall."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which is true about reproduction for both an amoeba and a paramecium?",
+                                        "choices": {
+                                            "A": "Both can conjugate.",
+                                            "B": "Neither can conjugate.",
+                                            "C": "An amoeba can conjugate, but a paramecium cannot.",
+                                            "D": "A paramecium can conjugate, but an amoeba cannot."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: An amoeba can conjugate, but a paramecium cannot."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A town built a road through a forest. Deer live in the forest on both sides of the road. Which would not help protect deer from the cars on the road?",
+                                        "choices": {
+                                            "A": "feeders on the side of the road",
+                                            "B": "lights along the side of the road",
+                                            "C": "signs telling drivers to be careful of deer",
+                                            "D": "bridges that let the deer walk under the road"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: signs telling drivers to be careful of deer"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "If a fox and an eagle eat some of the same organisms in an ecosystem, the relationship between the fox and the eagle could be classified as",
+                                        "choices": {
+                                            "A": "competition.",
+                                            "B": "mutualism.",
+                                            "C": "predation.",
+                                            "D": "parasitism."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's the answer:\n\nC: predation."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which characteristic does a paramecium have in common with volvox?",
+                                        "choices": {
+                                            "A": "able to produce gametes",
+                                            "B": "can perform photosynthesis",
+                                            "C": "has an organelle for movement",
+                                            "D": "lives as one of a colony of cells"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Here's my answer:\n\nD: lives as one of a colony of cells.\n\nBoth paramecia and volvox are single-celled organisms that live as colonies of cells."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 5,
+                        "num_incorrect": 5,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.5,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.19,
+                                0.81
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.31
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 9604,
+                            "±3%": 1067,
+                            "±5%": 384
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A poultry egg is dissected in science class. What is the clear, thick fluid inside the poultry egg that serves as protection for the embryo?",
+                                        "choices": {
+                                            "A": "Yolk",
+                                            "B": "Shell",
+                                            "C": "Yolk sac",
+                                            "D": "Albumen"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Here's my answer:\n\nD: Albumen"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some students used a hot plate to heat 1 L of water from 20°C to the boiling point of water. The students recorded the temperature of the water each minute until it began to boil. Which of the following provides the most appropriate way to represent the data?",
+                                        "choices": {
+                                            "A": "a bar graph with temperature on the y-axis and time on the x-axis",
+                                            "B": "a bar graph with time on the y-axis and temperature on the x-axis",
+                                            "C": "a line graph with temperature on the y-axis and time on the x-axis",
+                                            "D": "a line graph with time on the y-axis and temperature on the x-axis"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\n\nC: a line graph with temperature on the y-axis and time on the x-axis\n\nExplanation: A line graph is the most appropriate way to represent the data because it allows for a continuous representation of the temperature over time. The other options (bar graph with temperature on the y-axis and time on the x-axis, bar graph with time on the y-axis and temperature on the x-axis, and line graph with"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some businesses offer customers the option to pay for merchandise using their fingerprints as identification. Which of the following would most benefit customers that use this new technology?",
+                                        "choices": {
+                                            "A": "cost of product is reduced",
+                                            "B": "protection of private information",
+                                            "C": "ability to track customer preferences",
+                                            "D": "funds would be credited immediately"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  Sure! Here's my answer:\n\nB: protection of private information."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "During a lecture, a professor was talking about the potential that hydrogen has for exploding under certain conditions. Which was most likely the topic of the professor's lecture?",
+                                        "choices": {
+                                            "A": "Conductivity of Gases",
+                                            "B": "Phase Changes in Matter",
+                                            "C": "Chemical Properties of Gases",
+                                            "D": "Physical Properties of Elements"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: Chemical Properties of Gases"
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these activities is used to conserve water?",
+                                        "choices": {
+                                            "A": "planting crops that survive in droughts",
+                                            "B": "running water while brushing teeth",
+                                            "C": "washing vehicles frequently",
+                                            "D": "watering grass after a rainfall"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Here's my answer:\n\nD: watering grass after a rainfall"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which is true about reproduction for both an amoeba and a paramecium?",
+                                        "choices": {
+                                            "A": "Both can conjugate.",
+                                            "B": "Neither can conjugate.",
+                                            "C": "An amoeba can conjugate, but a paramecium cannot.",
+                                            "D": "A paramecium can conjugate, but an amoeba cannot."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: An amoeba can conjugate, but a paramecium cannot."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A town built a road through a forest. Deer live in the forest on both sides of the road. Which would not help protect deer from the cars on the road?",
+                                        "choices": {
+                                            "A": "feeders on the side of the road",
+                                            "B": "lights along the side of the road",
+                                            "C": "signs telling drivers to be careful of deer",
+                                            "D": "bridges that let the deer walk under the road"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: signs telling drivers to be careful of deer\n\nExplanation: While all the options mentioned could potentially help protect deer from cars on the road, signs telling drivers to be careful of deer would not be effective in protecting the deer. This is because signs alone cannot prevent deer from crossing the road, and they may not be noticed by all drivers."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When placed in direct sunlight, which object will absorb the most visible light energy?",
+                                        "choices": {
+                                            "A": "a piece of clear glass",
+                                            "B": "a snowball",
+                                            "C": "a shiny mirror",
+                                            "D": "a black sweater"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: a shiny mirror"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "If a fox and an eagle eat some of the same organisms in an ecosystem, the relationship between the fox and the eagle could be classified as",
+                                        "choices": {
+                                            "A": "competition.",
+                                            "B": "mutualism.",
+                                            "C": "predation.",
+                                            "D": "parasitism."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: predation."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which characteristic does a paramecium have in common with volvox?",
+                                        "choices": {
+                                            "A": "able to produce gametes",
+                                            "B": "can perform photosynthesis",
+                                            "C": "has an organelle for movement",
+                                            "D": "lives as one of a colony of cells"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Here's my answer:\n\nD: lives as one of a colony of cells.\n\nBoth paramecia and volvox are colonial organisms, meaning they consist of multiple cells that work together as a single entity."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 4,
+                        "num_incorrect": 6,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.4,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.1,
+                                0.7
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.3
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 9220,
+                            "±3%": 1024,
+                            "±5%": 369
+                        }
+                    }
+                }
+            }
+        },
+        "meta-llama/Llama-2-70b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these activities is used to conserve water?",
+                                        "choices": {
+                                            "A": "planting crops that survive in droughts",
+                                            "B": "running water while brushing teeth",
+                                            "C": "washing vehicles frequently",
+                                            "D": "watering grass after a rainfall"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  A: planting crops that survive in droughts"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A poultry egg is dissected in science class. What is the clear, thick fluid inside the poultry egg that serves as protection for the embryo?",
+                                        "choices": {
+                                            "A": "Yolk",
+                                            "B": "Shell",
+                                            "C": "Yolk sac",
+                                            "D": "Albumen"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: Albumen"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A town built a road through a forest. Deer live in the forest on both sides of the road. Which would not help protect deer from the cars on the road?",
+                                        "choices": {
+                                            "A": "feeders on the side of the road",
+                                            "B": "lights along the side of the road",
+                                            "C": "signs telling drivers to be careful of deer",
+                                            "D": "bridges that let the deer walk under the road"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is A: feeders on the side of the road.\n\nFeeding deer on the side of the road may attract more deer to the area, but it would not protect them from cars on the road. The other options, lights, signs, and bridges, could all potentially help protect deer from cars by making them more visible, warning drivers of their presence, or providing a safe crossing point."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When placed in direct sunlight, which object will absorb the most visible light energy?",
+                                        "choices": {
+                                            "A": "a piece of clear glass",
+                                            "B": "a snowball",
+                                            "C": "a shiny mirror",
+                                            "D": "a black sweater"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is D: a black sweater.\n\nBlack objects absorb the most visible light energy, as they have a high albedo (absorption coefficient) and reflect very little light. In contrast, clear glass (A), snowballs (B), and shiny mirrors (C) reflect or transmit a significant amount of light, and would not absorb as much visible light energy as a black sweater."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some students used a hot plate to heat 1 L of water from 20°C to the boiling point of water. The students recorded the temperature of the water each minute until it began to boil. Which of the following provides the most appropriate way to represent the data?",
+                                        "choices": {
+                                            "A": "a bar graph with temperature on the y-axis and time on the x-axis",
+                                            "B": "a bar graph with time on the y-axis and temperature on the x-axis",
+                                            "C": "a line graph with temperature on the y-axis and time on the x-axis",
+                                            "D": "a line graph with time on the y-axis and temperature on the x-axis"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: a line graph with temperature on the y-axis and time on the x-axis.\n\nA line graph is the most appropriate way to represent the data because it allows for a visual representation of the change in temperature over time. The temperature of the water is the dependent variable, and the time is the independent variable. Therefore, it makes sense to have temperature on the y-axis and time on the x-axis.\n\nA bar graph with temperature on the y-"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some businesses offer customers the option to pay for merchandise using their fingerprints as identification. Which of the following would most benefit customers that use this new technology?",
+                                        "choices": {
+                                            "A": "cost of product is reduced",
+                                            "B": "protection of private information",
+                                            "C": "ability to track customer preferences",
+                                            "D": "funds would be credited immediately"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  B: protection of private information.\n\nThis technology allows customers to make payments using their fingerprints, which eliminates the need for physical currency or credit cards. This method of payment provides an additional layer of security and protection for customers' private information, as their fingerprints are unique to them and cannot be replicated or stolen. Therefore, option B is the correct answer."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which characteristic does a paramecium have in common with volvox?",
+                                        "choices": {
+                                            "A": "able to produce gametes",
+                                            "B": "can perform photosynthesis",
+                                            "C": "has an organelle for movement",
+                                            "D": "lives as one of a colony of cells"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: has an organelle for movement\n\nParamecia and Volvox both have cilia, which are organelles that are used for movement."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "During a lecture, a professor was talking about the potential that hydrogen has for exploding under certain conditions. Which was most likely the topic of the professor's lecture?",
+                                        "choices": {
+                                            "A": "Conductivity of Gases",
+                                            "B": "Phase Changes in Matter",
+                                            "C": "Chemical Properties of Gases",
+                                            "D": "Physical Properties of Elements"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: Chemical Properties of Gases"
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which is true about reproduction for both an amoeba and a paramecium?",
+                                        "choices": {
+                                            "A": "Both can conjugate.",
+                                            "B": "Neither can conjugate.",
+                                            "C": "An amoeba can conjugate, but a paramecium cannot.",
+                                            "D": "A paramecium can conjugate, but an amoeba cannot."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  B: Neither can conjugate.\n\nExplanation: Amoeba and Paramecium are both single-celled organisms that reproduce asexually, meaning they do not have the ability to conjugate (exchange genetic material) like some other single-celled organisms do."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "If a fox and an eagle eat some of the same organisms in an ecosystem, the relationship between the fox and the eagle could be classified as",
+                                        "choices": {
+                                            "A": "competition.",
+                                            "B": "mutualism.",
+                                            "C": "predation.",
+                                            "D": "parasitism."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: predation.\n\nThe fox and the eagle are both predators that feed on the same organisms in the ecosystem. This type of relationship is known as predation, where one organism (the predator) feeds on another organism (the prey). Therefore, option C is the correct answer."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 8,
+                        "num_incorrect": 2,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.8,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.55,
+                                1.05
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.25
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 6146,
+                            "±3%": 683,
+                            "±5%": 246
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these activities is used to conserve water?",
+                                        "choices": {
+                                            "A": "planting crops that survive in droughts",
+                                            "B": "running water while brushing teeth",
+                                            "C": "washing vehicles frequently",
+                                            "D": "watering grass after a rainfall"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  A: planting crops that survive in droughts"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A poultry egg is dissected in science class. What is the clear, thick fluid inside the poultry egg that serves as protection for the embryo?",
+                                        "choices": {
+                                            "A": "Yolk",
+                                            "B": "Shell",
+                                            "C": "Yolk sac",
+                                            "D": "Albumen"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: Albumen"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A town built a road through a forest. Deer live in the forest on both sides of the road. Which would not help protect deer from the cars on the road?",
+                                        "choices": {
+                                            "A": "feeders on the side of the road",
+                                            "B": "lights along the side of the road",
+                                            "C": "signs telling drivers to be careful of deer",
+                                            "D": "bridges that let the deer walk under the road"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is A: feeders on the side of the road.\n\nFeeding deer on the side of the road may attract more deer to the area, but it would not protect them from cars on the road. The other options, lights, signs, and bridges, could all potentially help protect deer from cars by making them more visible, warning drivers of their presence, or providing a safe crossing point."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When placed in direct sunlight, which object will absorb the most visible light energy?",
+                                        "choices": {
+                                            "A": "a piece of clear glass",
+                                            "B": "a snowball",
+                                            "C": "a shiny mirror",
+                                            "D": "a black sweater"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: a black sweater"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some students used a hot plate to heat 1 L of water from 20°C to the boiling point of water. The students recorded the temperature of the water each minute until it began to boil. Which of the following provides the most appropriate way to represent the data?",
+                                        "choices": {
+                                            "A": "a bar graph with temperature on the y-axis and time on the x-axis",
+                                            "B": "a bar graph with time on the y-axis and temperature on the x-axis",
+                                            "C": "a line graph with temperature on the y-axis and time on the x-axis",
+                                            "D": "a line graph with time on the y-axis and temperature on the x-axis"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: a line graph with temperature on the y-axis and time on the x-axis"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some businesses offer customers the option to pay for merchandise using their fingerprints as identification. Which of the following would most benefit customers that use this new technology?",
+                                        "choices": {
+                                            "A": "cost of product is reduced",
+                                            "B": "protection of private information",
+                                            "C": "ability to track customer preferences",
+                                            "D": "funds would be credited immediately"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  B: protection of private information"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which characteristic does a paramecium have in common with volvox?",
+                                        "choices": {
+                                            "A": "able to produce gametes",
+                                            "B": "can perform photosynthesis",
+                                            "C": "has an organelle for movement",
+                                            "D": "lives as one of a colony of cells"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: has an organelle for movement\n\nA paramecium and Volvox both have cilia, which are organelles that are used for movement."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "During a lecture, a professor was talking about the potential that hydrogen has for exploding under certain conditions. Which was most likely the topic of the professor's lecture?",
+                                        "choices": {
+                                            "A": "Conductivity of Gases",
+                                            "B": "Phase Changes in Matter",
+                                            "C": "Chemical Properties of Gases",
+                                            "D": "Physical Properties of Elements"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: Chemical Properties of Gases"
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which is true about reproduction for both an amoeba and a paramecium?",
+                                        "choices": {
+                                            "A": "Both can conjugate.",
+                                            "B": "Neither can conjugate.",
+                                            "C": "An amoeba can conjugate, but a paramecium cannot.",
+                                            "D": "A paramecium can conjugate, but an amoeba cannot."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  B: Neither can conjugate.\n\nExplanation:\n\nAmoeba and Paramecium are both single-celled organisms that belong to the kingdom Protista. Neither of them can conjugate, as they do not have the ability to form a conjugation pilus, which is a structure required for conjugation.\n\nTherefore, the correct answer is B: Neither can conjugate."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "If a fox and an eagle eat some of the same organisms in an ecosystem, the relationship between the fox and the eagle could be classified as",
+                                        "choices": {
+                                            "A": "competition.",
+                                            "B": "mutualism.",
+                                            "C": "predation.",
+                                            "D": "parasitism."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: predation.\n\nThe fox and the eagle are both predators that feed on the same organisms in the ecosystem. Therefore, their relationship can be classified as predation."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 8,
+                        "num_incorrect": 2,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.8,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.55,
+                                1.05
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.25
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 6146,
+                            "±3%": 683,
+                            "±5%": 246
+                        }
+                    }
+                }
+            }
+        },
+        "gpt-3.5-turbo-0613": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these activities is used to conserve water?",
+                                        "choices": {
+                                            "A": "planting crops that survive in droughts",
+                                            "B": "running water while brushing teeth",
+                                            "C": "washing vehicles frequently",
+                                            "D": "watering grass after a rainfall"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A poultry egg is dissected in science class. What is the clear, thick fluid inside the poultry egg that serves as protection for the embryo?",
+                                        "choices": {
+                                            "A": "Yolk",
+                                            "B": "Shell",
+                                            "C": "Yolk sac",
+                                            "D": "Albumen"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: Albumen"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A town built a road through a forest. Deer live in the forest on both sides of the road. Which would not help protect deer from the cars on the road?",
+                                        "choices": {
+                                            "A": "feeders on the side of the road",
+                                            "B": "lights along the side of the road",
+                                            "C": "signs telling drivers to be careful of deer",
+                                            "D": "bridges that let the deer walk under the road"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When placed in direct sunlight, which object will absorb the most visible light energy?",
+                                        "choices": {
+                                            "A": "a piece of clear glass",
+                                            "B": "a snowball",
+                                            "C": "a shiny mirror",
+                                            "D": "a black sweater"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: a black sweater"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some students used a hot plate to heat 1 L of water from 20°C to the boiling point of water. The students recorded the temperature of the water each minute until it began to boil. Which of the following provides the most appropriate way to represent the data?",
+                                        "choices": {
+                                            "A": "a bar graph with temperature on the y-axis and time on the x-axis",
+                                            "B": "a bar graph with time on the y-axis and temperature on the x-axis",
+                                            "C": "a line graph with temperature on the y-axis and time on the x-axis",
+                                            "D": "a line graph with time on the y-axis and temperature on the x-axis"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: a line graph with temperature on the y-axis and time on the x-axis"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "If a fox and an eagle eat some of the same organisms in an ecosystem, the relationship between the fox and the eagle could be classified as",
+                                        "choices": {
+                                            "A": "competition.",
+                                            "B": "mutualism.",
+                                            "C": "predation.",
+                                            "D": "parasitism."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: competition."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some businesses offer customers the option to pay for merchandise using their fingerprints as identification. Which of the following would most benefit customers that use this new technology?",
+                                        "choices": {
+                                            "A": "cost of product is reduced",
+                                            "B": "protection of private information",
+                                            "C": "ability to track customer preferences",
+                                            "D": "funds would be credited immediately"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "B: protection of private information"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which characteristic does a paramecium have in common with volvox?",
+                                        "choices": {
+                                            "A": "able to produce gametes",
+                                            "B": "can perform photosynthesis",
+                                            "C": "has an organelle for movement",
+                                            "D": "lives as one of a colony of cells"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: has an organelle for movement"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "During a lecture, a professor was talking about the potential that hydrogen has for exploding under certain conditions. Which was most likely the topic of the professor's lecture?",
+                                        "choices": {
+                                            "A": "Conductivity of Gases",
+                                            "B": "Phase Changes in Matter",
+                                            "C": "Chemical Properties of Gases",
+                                            "D": "Physical Properties of Elements"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: Chemical Properties of Gases"
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which is true about reproduction for both an amoeba and a paramecium?",
+                                        "choices": {
+                                            "A": "Both can conjugate.",
+                                            "B": "Neither can conjugate.",
+                                            "C": "An amoeba can conjugate, but a paramecium cannot.",
+                                            "D": "A paramecium can conjugate, but an amoeba cannot."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: Both can conjugate."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 9,
+                        "num_incorrect": 1,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.9,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.71,
+                                1.09
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.19
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 3457,
+                            "±3%": 384,
+                            "±5%": 138
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these activities is used to conserve water?",
+                                        "choices": {
+                                            "A": "planting crops that survive in droughts",
+                                            "B": "running water while brushing teeth",
+                                            "C": "washing vehicles frequently",
+                                            "D": "watering grass after a rainfall"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: planting crops that survive in droughts"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A poultry egg is dissected in science class. What is the clear, thick fluid inside the poultry egg that serves as protection for the embryo?",
+                                        "choices": {
+                                            "A": "Yolk",
+                                            "B": "Shell",
+                                            "C": "Yolk sac",
+                                            "D": "Albumen"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: Albumen"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A town built a road through a forest. Deer live in the forest on both sides of the road. Which would not help protect deer from the cars on the road?",
+                                        "choices": {
+                                            "A": "feeders on the side of the road",
+                                            "B": "lights along the side of the road",
+                                            "C": "signs telling drivers to be careful of deer",
+                                            "D": "bridges that let the deer walk under the road"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: feeders on the side of the road"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When placed in direct sunlight, which object will absorb the most visible light energy?",
+                                        "choices": {
+                                            "A": "a piece of clear glass",
+                                            "B": "a snowball",
+                                            "C": "a shiny mirror",
+                                            "D": "a black sweater"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: a black sweater"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some students used a hot plate to heat 1 L of water from 20°C to the boiling point of water. The students recorded the temperature of the water each minute until it began to boil. Which of the following provides the most appropriate way to represent the data?",
+                                        "choices": {
+                                            "A": "a bar graph with temperature on the y-axis and time on the x-axis",
+                                            "B": "a bar graph with time on the y-axis and temperature on the x-axis",
+                                            "C": "a line graph with temperature on the y-axis and time on the x-axis",
+                                            "D": "a line graph with time on the y-axis and temperature on the x-axis"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: a line graph with temperature on the y-axis and time on the x-axis"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "If a fox and an eagle eat some of the same organisms in an ecosystem, the relationship between the fox and the eagle could be classified as",
+                                        "choices": {
+                                            "A": "competition.",
+                                            "B": "mutualism.",
+                                            "C": "predation.",
+                                            "D": "parasitism."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: competition."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Some businesses offer customers the option to pay for merchandise using their fingerprints as identification. Which of the following would most benefit customers that use this new technology?",
+                                        "choices": {
+                                            "A": "cost of product is reduced",
+                                            "B": "protection of private information",
+                                            "C": "ability to track customer preferences",
+                                            "D": "funds would be credited immediately"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "B: protection of private information"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which characteristic does a paramecium have in common with volvox?",
+                                        "choices": {
+                                            "A": "able to produce gametes",
+                                            "B": "can perform photosynthesis",
+                                            "C": "has an organelle for movement",
+                                            "D": "lives as one of a colony of cells"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: has an organelle for movement"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "During a lecture, a professor was talking about the potential that hydrogen has for exploding under certain conditions. Which was most likely the topic of the professor's lecture?",
+                                        "choices": {
+                                            "A": "Conductivity of Gases",
+                                            "B": "Phase Changes in Matter",
+                                            "C": "Chemical Properties of Gases",
+                                            "D": "Physical Properties of Elements"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: Chemical Properties of Gases"
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which is true about reproduction for both an amoeba and a paramecium?",
+                                        "choices": {
+                                            "A": "Both can conjugate.",
+                                            "B": "Neither can conjugate.",
+                                            "C": "An amoeba can conjugate, but a paramecium cannot.",
+                                            "D": "A paramecium can conjugate, but an amoeba cannot."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: Both can conjugate."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 9,
+                        "num_incorrect": 1,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.9,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.71,
+                                1.09
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.19
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 3457,
+                            "±3%": 384,
+                            "±5%": 138
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "llm_stats": {
+        "token_usage": {},
+        "total_prompt_tokens": 0,
+        "total_completion_tokens": 0,
+        "total_tokens": 0,
+        "total_cost": "0"
+    },
+    "timestamp": "2024-04-22T14:12:14.512697"
+}

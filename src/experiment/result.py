@@ -1,7 +1,7 @@
 from functools import cached_property
 from typing import Any, Annotated
 
-from pydantic import BaseModel, computed_field, WrapSerializer, ConfigDict
+from pydantic import BaseModel, computed_field, WrapSerializer, ConfigDict, Field
 from pydantic_core.core_schema import SerializerFunctionWrapHandler
 
 from src.evaluation_tasks.schema import SampleResult
@@ -40,7 +40,7 @@ class EvaluationStatistics(BaseModel):
 
 
 class EvaluatedSamples(BaseModel):
-    correct: list[SampleResult]
+    correct: list[SampleResult] = Field(..., exclude=True)
     incorrect: list[SampleResult]
     invalid: list[SampleResult]
 

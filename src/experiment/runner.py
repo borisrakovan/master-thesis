@@ -39,6 +39,12 @@ class ExperimentRunner:
     async def run(self, experiment: ExperimentDefinition) -> ExperimentRun:
         evaluation_task = create_evaluation_task(experiment, llm=self._llm)
 
+        if evaluation_task.num_samples < self._options.num_samples:
+            raise ValueError(
+                f"Dataset size {evaluation_task.num_samples} is lower "
+                f"than the number of experiment samples {self._options.num_samples}."
+            )
+
         sample_iterator = evaluation_task.iter_samples()
         samples = list(
             random_sample(

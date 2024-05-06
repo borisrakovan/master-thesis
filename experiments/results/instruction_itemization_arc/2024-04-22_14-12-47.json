@@ -1,0 +1,1570 @@
+{
+    "experiment": {
+        "slug": "instruction_itemization_arc",
+        "name": "Instruction itemization ARC multiple choice QA",
+        "experiment_type": "INSTRUCTION_ITEMIZATION",
+        "task_type": "ARC_MULTIPLE_CHOICE_QA",
+        "models": [
+            "meta-llama/Llama-2-7b-chat-hf",
+            "meta-llama/Llama-2-13b-chat-hf",
+            "meta-llama/Llama-2-70b-chat-hf",
+            "gpt-3.5-turbo-0613"
+        ],
+        "prompts": {
+            "user": [
+                {
+                    "name": "Baseline"
+                },
+                {
+                    "name": "Itemized"
+                }
+            ]
+        }
+    },
+    "options": {
+        "random_seed": 47,
+        "num_samples": 10
+    },
+    "results": {
+        "meta-llama/Llama-2-7b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Metal atoms will most likely form ions by the",
+                                        "choices": {
+                                            "A": "loss of electrons.",
+                                            "B": "loss of protons.",
+                                            "C": "gain of electrons.",
+                                            "D": "gain of protons."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  Based on the information provided in the question, the correct answer is:\nA: loss of electrons.\nMetal atoms will most likely form ions by losing electrons, so the correct answer is (A) loss of electrons."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When performing an experiment for a science fair, what should be done if the data do not support the hypothesis?",
+                                        "choices": {
+                                            "A": "Check for errors and run the experiment again.",
+                                            "B": "Change the hypothesis to match the conclusion.",
+                                            "C": "Change the variable so the data will match the hypothesis.",
+                                            "D": "Ignore the data and prepare the science fair display anyway."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is (A): Check for errors and run the experiment again.\nIf the data do not support the hypothesis, it is important to first check for any errors or inconsistencies in the experiment that may have led to the inconclusive results. This may involve re-running the experiment with careful attention to detail, or checking the experimental design and procedures to ensure they were followed correctly. Only after identifying and addressing any errors or inconsistencies should the hypothesis be re"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The structures found in a living cell can be compared to the parts of a factory that produces cars. Which part of the factory is most similar to the nucleus of a living cell?",
+                                        "choices": {
+                                            "A": "a conveyor belt that transports materials",
+                                            "B": "a storage bin that holds the pieces needed to assemble a car",
+                                            "C": "the computer room that controls the assembly process",
+                                            "D": "the generator that provides energy for the factory"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C) the computer room that controls the assembly process.\nIn a living cell, the nucleus serves as the control center, containing the genetic material that determines the cell's characteristics and directs its functions. Just as a computer controls the assembly process in a factory, the nucleus controls the various processes that occur within the cell, such as metabolism, growth, and reproduction.\nThe other options do not accurately compare to the functions"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student is watching a local television weather report for Gloucester, Massachusetts. Which of the following is most likely included in this weather report?",
+                                        "choices": {
+                                            "A": "the speed of currents in a river",
+                                            "B": "the amount of moisture in the air",
+                                            "C": "the depth of currents in the ocean",
+                                            "D": "the level of moisture in the ground"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  The correct answer is (B): the amount of moisture in the air."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When high winds knocked down pine trees in a wooded region, it created a gap in the crowded canopy and allowed sunlight to fall on the ground. The increased sunlight allowed a dense growth of raspberry plants which protected young pine seedlings from being eaten by herbivores. Over time, the pine seedlings grew and blocked sunlight from falling on the woodland floor, thereby preventing growth of more raspberry plants. Which of these terms best describes the process of change observed in this woodlands community?",
+                                        "choices": {
+                                            "A": "adaptation",
+                                            "B": "cooperation",
+                                            "C": "natural selection",
+                                            "D": "ecological succession"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D) ecological succession.\nThe passage describes a change in the community structure of the woodland, from a dense growth of raspberry plants to a more open canopy with pine seedlings. This change occurs through the process of ecological succession, where a new species becomes dominant in a previously occupied niche. In this case, the raspberry plants are displaced by the pine seedlings as the dominant species in the wood"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Researchers work in teams to make cars more fuel efficient. Which of these statements describes the main advantage of working in teams rather than working individually?",
+                                        "choices": {
+                                            "A": "The research is more likely to be published.",
+                                            "B": "The research costs less to perform.",
+                                            "C": "The researchers can share their ideas.",
+                                            "D": "The researchers have more time to complete work."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: The researchers can share their ideas.\nWorking in teams allows researchers to share their ideas and expertise, which can lead to more innovative and effective solutions than working individually. By collaborating, team members can build upon each other's ideas, identify potential problems, and find creative solutions to overcome them. This can ultimately lead to more fuel-efficient cars and a more efficient research process."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which type of water reservoir contains the largest volume of fresh water?",
+                                        "choices": {
+                                            "A": "lakes",
+                                            "B": "rivers",
+                                            "C": "ice sheets",
+                                            "D": "aquifers"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C) ice sheets. Therefore, I will label my response as C."
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is an example of liquid water?",
+                                        "choices": {
+                                            "A": "Frost",
+                                            "B": "Ice",
+                                            "C": "Rain",
+                                            "D": "Steam"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D) Steam."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  The correct answer is (B): Landlocked areas are usually at a lower altitude than coastline areas.\nExplanation:\nAreas in the middle of a large continent are typically at a lower altitude than coastal areas because the continent is surrounded by mountains or hills that block the flow of air masses and create a rain shadow effect. This means that the air is forced to rise and cool as it flows over the mountains, resulting in a more extreme difference in temperature between the"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which activity is an example of a chemical change?",
+                                        "choices": {
+                                            "A": "sugar dissolving in water",
+                                            "B": "water evaporating in air",
+                                            "C": "lighting a match",
+                                            "D": "freezing water"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D): freezing water.\nExplanation: A chemical change occurs when one or more substances are transformed into a new substance with different properties. Freezing water is an example of a chemical change because it involves the transformation of liquid water (H2O) into a solid (ice) with different physical properties.\nThe other options are not examples of chemical changes:\n* Sugar dissolving in water is an example of a physical change, as"
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 7,
+                        "num_incorrect": 3,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.7,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.42,
+                                0.98
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.28
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 8067,
+                            "±3%": 896,
+                            "±5%": 323
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Metal atoms will most likely form ions by the",
+                                        "choices": {
+                                            "A": "loss of electrons.",
+                                            "B": "loss of protons.",
+                                            "C": "gain of electrons.",
+                                            "D": "gain of protons."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is:\nA: loss of electrons.\n\nMetal atoms will most likely form ions by losing electrons, so the correct answer is (A) loss of electrons."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When performing an experiment for a science fair, what should be done if the data do not support the hypothesis?",
+                                        "choices": {
+                                            "A": "Check for errors and run the experiment again.",
+                                            "B": "Change the hypothesis to match the conclusion.",
+                                            "C": "Change the variable so the data will match the hypothesis.",
+                                            "D": "Ignore the data and prepare the science fair display anyway."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is (A): Check for errors and run the experiment again."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The structures found in a living cell can be compared to the parts of a factory that produces cars. Which part of the factory is most similar to the nucleus of a living cell?",
+                                        "choices": {
+                                            "A": "a conveyor belt that transports materials",
+                                            "B": "a storage bin that holds the pieces needed to assemble a car",
+                                            "C": "the computer room that controls the assembly process",
+                                            "D": "the generator that provides energy for the factory"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: the computer room that controls the assembly process.\nIn this analogy, the nucleus of a living cell can be compared to the computer room of a factory that controls the assembly process. Just as the computer room coordinates the assembly of cars in a factory, the nucleus coordinates the various processes and activities within a living cell."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student is watching a local television weather report for Gloucester, Massachusetts. Which of the following is most likely included in this weather report?",
+                                        "choices": {
+                                            "A": "the speed of currents in a river",
+                                            "B": "the amount of moisture in the air",
+                                            "C": "the depth of currents in the ocean",
+                                            "D": "the level of moisture in the ground"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  The correct answer is (B): the amount of moisture in the air."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When high winds knocked down pine trees in a wooded region, it created a gap in the crowded canopy and allowed sunlight to fall on the ground. The increased sunlight allowed a dense growth of raspberry plants which protected young pine seedlings from being eaten by herbivores. Over time, the pine seedlings grew and blocked sunlight from falling on the woodland floor, thereby preventing growth of more raspberry plants. Which of these terms best describes the process of change observed in this woodlands community?",
+                                        "choices": {
+                                            "A": "adaptation",
+                                            "B": "cooperation",
+                                            "C": "natural selection",
+                                            "D": "ecological succession"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D) ecological succession.\nExplanation:\nThe passage describes a change in the woodland community where the loss of pine trees due to high winds creates a gap in the canopy, allowing sunlight to reach the ground and promoting the growth of raspberry plants. As the pine seedlings grow, they block sunlight from reaching the woodland floor, preventing the growth of more raspberry plants. This process of"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Researchers work in teams to make cars more fuel efficient. Which of these statements describes the main advantage of working in teams rather than working individually?",
+                                        "choices": {
+                                            "A": "The research is more likely to be published.",
+                                            "B": "The research costs less to perform.",
+                                            "C": "The researchers can share their ideas.",
+                                            "D": "The researchers have more time to complete work."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: The researchers can share their ideas.\n\nExplanation:\nWorking in teams allows researchers to share their ideas and expertise, which can lead to more innovative and effective solutions. When working individually, researchers may miss out on opportunities for collaboration and may not be able to take advantage of the diverse perspectives and skills of their team members."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which type of water reservoir contains the largest volume of fresh water?",
+                                        "choices": {
+                                            "A": "lakes",
+                                            "B": "rivers",
+                                            "C": "ice sheets",
+                                            "D": "aquifers"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: ice sheets\n\nTherefore, I will label my response as \"C\"."
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is an example of liquid water?",
+                                        "choices": {
+                                            "A": "Frost",
+                                            "B": "Ice",
+                                            "C": "Rain",
+                                            "D": "Steam"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Based on the information provided in the question, the correct answer is:\nD: Steam\n\nTherefore, my response is: D"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: Coastlines are usually surrounded by mountains that block air masses.\n\nExplanation:\nAreas in the middle of a large continent are generally more isolated from the moderating influence of the ocean, which can help regulate temperature. Coastlines are often surrounded by mountains or other topographic features that block air masses and create microclimates, which can lead to more extreme temperature differences between the coast and inland areas."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which activity is an example of a chemical change?",
+                                        "choices": {
+                                            "A": "sugar dissolving in water",
+                                            "B": "water evaporating in air",
+                                            "C": "lighting a match",
+                                            "D": "freezing water"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D): freezing water. Therefore, I will select the letter D."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 7,
+                        "num_incorrect": 3,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.7,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.42,
+                                0.98
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.28
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 8067,
+                            "±3%": 896,
+                            "±5%": 323
+                        }
+                    }
+                }
+            }
+        },
+        "meta-llama/Llama-2-13b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is an example of liquid water?",
+                                        "choices": {
+                                            "A": "Frost",
+                                            "B": "Ice",
+                                            "C": "Rain",
+                                            "D": "Steam"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! The correct answer is:\n\nC: Rain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Here's the answer:\n\nD: Oceans change temperature slowly and regulate the temperature of nearby land."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When performing an experiment for a science fair, what should be done if the data do not support the hypothesis?",
+                                        "choices": {
+                                            "A": "Check for errors and run the experiment again.",
+                                            "B": "Change the hypothesis to match the conclusion.",
+                                            "C": "Change the variable so the data will match the hypothesis.",
+                                            "D": "Ignore the data and prepare the science fair display anyway."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  Sure! Here's the answer:\n\nA: Check for errors and run the experiment again."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The structures found in a living cell can be compared to the parts of a factory that produces cars. Which part of the factory is most similar to the nucleus of a living cell?",
+                                        "choices": {
+                                            "A": "a conveyor belt that transports materials",
+                                            "B": "a storage bin that holds the pieces needed to assemble a car",
+                                            "C": "the computer room that controls the assembly process",
+                                            "D": "the generator that provides energy for the factory"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Based on the information provided, the correct answer is:\n\nC: the computer room that controls the assembly process.\n\nJust like the nucleus of a living cell controls the assembly process of the cell's components, the computer room in a factory controls the assembly process of the cars."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student is watching a local television weather report for Gloucester, Massachusetts. Which of the following is most likely included in this weather report?",
+                                        "choices": {
+                                            "A": "the speed of currents in a river",
+                                            "B": "the amount of moisture in the air",
+                                            "C": "the depth of currents in the ocean",
+                                            "D": "the level of moisture in the ground"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  Sure! Based on the information provided, the correct answer is:\n\nB: the amount of moisture in the air."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Researchers work in teams to make cars more fuel efficient. Which of these statements describes the main advantage of working in teams rather than working individually?",
+                                        "choices": {
+                                            "A": "The research is more likely to be published.",
+                                            "B": "The research costs less to perform.",
+                                            "C": "The researchers can share their ideas.",
+                                            "D": "The researchers have more time to complete work."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: The researchers can share their ideas."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which activity is an example of a chemical change?",
+                                        "choices": {
+                                            "A": "sugar dissolving in water",
+                                            "B": "water evaporating in air",
+                                            "C": "lighting a match",
+                                            "D": "freezing water"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! The correct answer is C: lighting a match.\n\nExplanation: Lighting a match is an example of a chemical change because it involves a chemical reaction between the match and the fuel it is lit with, resulting in the production of heat and light. The other options are not examples of chemical changes:\n\nA: Sugar dissolving in water is a physical change, as the sugar molecules are simply dispersed in the water without any chemical reaction occurring"
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Metal atoms will most likely form ions by the",
+                                        "choices": {
+                                            "A": "loss of electrons.",
+                                            "B": "loss of protons.",
+                                            "C": "gain of electrons.",
+                                            "D": "gain of protons."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: gain of electrons."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When high winds knocked down pine trees in a wooded region, it created a gap in the crowded canopy and allowed sunlight to fall on the ground. The increased sunlight allowed a dense growth of raspberry plants which protected young pine seedlings from being eaten by herbivores. Over time, the pine seedlings grew and blocked sunlight from falling on the woodland floor, thereby preventing growth of more raspberry plants. Which of these terms best describes the process of change observed in this woodlands community?",
+                                        "choices": {
+                                            "A": "adaptation",
+                                            "B": "cooperation",
+                                            "C": "natural selection",
+                                            "D": "ecological succession"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: natural selection"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which type of water reservoir contains the largest volume of fresh water?",
+                                        "choices": {
+                                            "A": "lakes",
+                                            "B": "rivers",
+                                            "C": "ice sheets",
+                                            "D": "aquifers"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Here's my answer:\n\nD: aquifers"
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 7,
+                        "num_incorrect": 3,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.7,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.42,
+                                0.98
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.28
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 8067,
+                            "±3%": 896,
+                            "±5%": 323
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is an example of liquid water?",
+                                        "choices": {
+                                            "A": "Frost",
+                                            "B": "Ice",
+                                            "C": "Rain",
+                                            "D": "Steam"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: Rain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure, I can do that! Based on the information provided in the question, the correct answer is:\n\nD: Oceans change temperature slowly and regulate the temperature of nearby land.\n\nExplanation: The oceans have a moderating effect on the climate of nearby land, as they absorb and release heat slowly, regulating the temperature of the surrounding air and land. This leads to more extreme differences in temperature between coastal and inland areas."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When performing an experiment for a science fair, what should be done if the data do not support the hypothesis?",
+                                        "choices": {
+                                            "A": "Check for errors and run the experiment again.",
+                                            "B": "Change the hypothesis to match the conclusion.",
+                                            "C": "Change the variable so the data will match the hypothesis.",
+                                            "D": "Ignore the data and prepare the science fair display anyway."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  Sure! Here's the answer:\n\nA: Check for errors and run the experiment again."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The structures found in a living cell can be compared to the parts of a factory that produces cars. Which part of the factory is most similar to the nucleus of a living cell?",
+                                        "choices": {
+                                            "A": "a conveyor belt that transports materials",
+                                            "B": "a storage bin that holds the pieces needed to assemble a car",
+                                            "C": "the computer room that controls the assembly process",
+                                            "D": "the generator that provides energy for the factory"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: the computer room that controls the assembly process.\n\nThe nucleus of a living cell is like the control center of a factory, directing the assembly of proteins and other molecules. Just as the computer room controls the assembly process in a factory, the nucleus controls the assembly of molecules in a cell."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student is watching a local television weather report for Gloucester, Massachusetts. Which of the following is most likely included in this weather report?",
+                                        "choices": {
+                                            "A": "the speed of currents in a river",
+                                            "B": "the amount of moisture in the air",
+                                            "C": "the depth of currents in the ocean",
+                                            "D": "the level of moisture in the ground"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  Sure! Here's my answer:\n\nB: the amount of moisture in the air"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Researchers work in teams to make cars more fuel efficient. Which of these statements describes the main advantage of working in teams rather than working individually?",
+                                        "choices": {
+                                            "A": "The research is more likely to be published.",
+                                            "B": "The research costs less to perform.",
+                                            "C": "The researchers can share their ideas.",
+                                            "D": "The researchers have more time to complete work."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: The researchers can share their ideas."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which activity is an example of a chemical change?",
+                                        "choices": {
+                                            "A": "sugar dissolving in water",
+                                            "B": "water evaporating in air",
+                                            "C": "lighting a match",
+                                            "D": "freezing water"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: lighting a match"
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Metal atoms will most likely form ions by the",
+                                        "choices": {
+                                            "A": "loss of electrons.",
+                                            "B": "loss of protons.",
+                                            "C": "gain of electrons.",
+                                            "D": "gain of protons."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: gain of electrons."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When high winds knocked down pine trees in a wooded region, it created a gap in the crowded canopy and allowed sunlight to fall on the ground. The increased sunlight allowed a dense growth of raspberry plants which protected young pine seedlings from being eaten by herbivores. Over time, the pine seedlings grew and blocked sunlight from falling on the woodland floor, thereby preventing growth of more raspberry plants. Which of these terms best describes the process of change observed in this woodlands community?",
+                                        "choices": {
+                                            "A": "adaptation",
+                                            "B": "cooperation",
+                                            "C": "natural selection",
+                                            "D": "ecological succession"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: natural selection"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which type of water reservoir contains the largest volume of fresh water?",
+                                        "choices": {
+                                            "A": "lakes",
+                                            "B": "rivers",
+                                            "C": "ice sheets",
+                                            "D": "aquifers"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Here's my answer:\n\nD: aquifers"
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 7,
+                        "num_incorrect": 3,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.7,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.42,
+                                0.98
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.28
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 8067,
+                            "±3%": 896,
+                            "±5%": 323
+                        }
+                    }
+                }
+            }
+        },
+        "meta-llama/Llama-2-70b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is an example of liquid water?",
+                                        "choices": {
+                                            "A": "Frost",
+                                            "B": "Ice",
+                                            "C": "Rain",
+                                            "D": "Steam"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: Rain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: Oceans change temperature slowly and regulate the temperature of nearby land.\n\nExplanation: Oceans have a high heat capacity, meaning they can absorb and release heat slowly, which helps regulate the temperature of nearby land. This moderating effect of the ocean results in less extreme temperature differences in coastal areas compared to inland areas. In contrast, areas in the middle of a large continent, away from the moderating influence of the ocean, can experience"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Metal atoms will most likely form ions by the",
+                                        "choices": {
+                                            "A": "loss of electrons.",
+                                            "B": "loss of protons.",
+                                            "C": "gain of electrons.",
+                                            "D": "gain of protons."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  A: loss of electrons.\n\nMetal atoms tend to lose electrons to form positive ions (cations) during chemical reactions. This process is known as ionization. Therefore, option A is the correct answer."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When performing an experiment for a science fair, what should be done if the data do not support the hypothesis?",
+                                        "choices": {
+                                            "A": "Check for errors and run the experiment again.",
+                                            "B": "Change the hypothesis to match the conclusion.",
+                                            "C": "Change the variable so the data will match the hypothesis.",
+                                            "D": "Ignore the data and prepare the science fair display anyway."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  A: Check for errors and run the experiment again."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The structures found in a living cell can be compared to the parts of a factory that produces cars. Which part of the factory is most similar to the nucleus of a living cell?",
+                                        "choices": {
+                                            "A": "a conveyor belt that transports materials",
+                                            "B": "a storage bin that holds the pieces needed to assemble a car",
+                                            "C": "the computer room that controls the assembly process",
+                                            "D": "the generator that provides energy for the factory"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: The computer room that controls the assembly process is most similar to the nucleus of a living cell. The nucleus is the control center of the cell, where DNA is stored and transcribed into RNA, much like how the computer room controls the assembly process by providing instructions and coordinating the various parts of the factory."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student is watching a local television weather report for Gloucester, Massachusetts. Which of the following is most likely included in this weather report?",
+                                        "choices": {
+                                            "A": "the speed of currents in a river",
+                                            "B": "the amount of moisture in the air",
+                                            "C": "the depth of currents in the ocean",
+                                            "D": "the level of moisture in the ground"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  B: the amount of moisture in the air"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When high winds knocked down pine trees in a wooded region, it created a gap in the crowded canopy and allowed sunlight to fall on the ground. The increased sunlight allowed a dense growth of raspberry plants which protected young pine seedlings from being eaten by herbivores. Over time, the pine seedlings grew and blocked sunlight from falling on the woodland floor, thereby preventing growth of more raspberry plants. Which of these terms best describes the process of change observed in this woodlands community?",
+                                        "choices": {
+                                            "A": "adaptation",
+                                            "B": "cooperation",
+                                            "C": "natural selection",
+                                            "D": "ecological succession"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: ecological succession"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Researchers work in teams to make cars more fuel efficient. Which of these statements describes the main advantage of working in teams rather than working individually?",
+                                        "choices": {
+                                            "A": "The research is more likely to be published.",
+                                            "B": "The research costs less to perform.",
+                                            "C": "The researchers can share their ideas.",
+                                            "D": "The researchers have more time to complete work."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: The researchers can share their ideas.\n\nWorking in teams allows researchers to collaborate and share their ideas, expertise, and knowledge, leading to a more efficient and effective research process. This is the main advantage of working in teams over working individually."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which activity is an example of a chemical change?",
+                                        "choices": {
+                                            "A": "sugar dissolving in water",
+                                            "B": "water evaporating in air",
+                                            "C": "lighting a match",
+                                            "D": "freezing water"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: lighting a match"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which type of water reservoir contains the largest volume of fresh water?",
+                                        "choices": {
+                                            "A": "lakes",
+                                            "B": "rivers",
+                                            "C": "ice sheets",
+                                            "D": "aquifers"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: ice sheets"
+                            }
+                        ],
+                        "incorrect": [],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 10,
+                        "num_incorrect": 0,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 1.0,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                1.0,
+                                1.0
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.0
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 0,
+                            "±3%": 0,
+                            "±5%": 0
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is an example of liquid water?",
+                                        "choices": {
+                                            "A": "Frost",
+                                            "B": "Ice",
+                                            "C": "Rain",
+                                            "D": "Steam"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: Rain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: Oceans change temperature slowly and regulate the temperature of nearby land.\n\nCorrect answer: D"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Metal atoms will most likely form ions by the",
+                                        "choices": {
+                                            "A": "loss of electrons.",
+                                            "B": "loss of protons.",
+                                            "C": "gain of electrons.",
+                                            "D": "gain of protons."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  A: loss of electrons."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When performing an experiment for a science fair, what should be done if the data do not support the hypothesis?",
+                                        "choices": {
+                                            "A": "Check for errors and run the experiment again.",
+                                            "B": "Change the hypothesis to match the conclusion.",
+                                            "C": "Change the variable so the data will match the hypothesis.",
+                                            "D": "Ignore the data and prepare the science fair display anyway."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  A: Check for errors and run the experiment again."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The structures found in a living cell can be compared to the parts of a factory that produces cars. Which part of the factory is most similar to the nucleus of a living cell?",
+                                        "choices": {
+                                            "A": "a conveyor belt that transports materials",
+                                            "B": "a storage bin that holds the pieces needed to assemble a car",
+                                            "C": "the computer room that controls the assembly process",
+                                            "D": "the generator that provides energy for the factory"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: The computer room that controls the assembly process is most similar to the nucleus of a living cell. The nucleus is the control center of the cell, where DNA is stored and transcribed into RNA, much like how the computer room controls the assembly process by providing instructions and coordinating the various parts of the factory."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student is watching a local television weather report for Gloucester, Massachusetts. Which of the following is most likely included in this weather report?",
+                                        "choices": {
+                                            "A": "the speed of currents in a river",
+                                            "B": "the amount of moisture in the air",
+                                            "C": "the depth of currents in the ocean",
+                                            "D": "the level of moisture in the ground"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  B: the amount of moisture in the air"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When high winds knocked down pine trees in a wooded region, it created a gap in the crowded canopy and allowed sunlight to fall on the ground. The increased sunlight allowed a dense growth of raspberry plants which protected young pine seedlings from being eaten by herbivores. Over time, the pine seedlings grew and blocked sunlight from falling on the woodland floor, thereby preventing growth of more raspberry plants. Which of these terms best describes the process of change observed in this woodlands community?",
+                                        "choices": {
+                                            "A": "adaptation",
+                                            "B": "cooperation",
+                                            "C": "natural selection",
+                                            "D": "ecological succession"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: ecological succession"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Researchers work in teams to make cars more fuel efficient. Which of these statements describes the main advantage of working in teams rather than working individually?",
+                                        "choices": {
+                                            "A": "The research is more likely to be published.",
+                                            "B": "The research costs less to perform.",
+                                            "C": "The researchers can share their ideas.",
+                                            "D": "The researchers have more time to complete work."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: The researchers can share their ideas.\n\nWorking in teams allows researchers to collaborate and share their ideas, expertise, and knowledge, leading to a more efficient and effective research process. This is the main advantage of working in teams over working individually."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which activity is an example of a chemical change?",
+                                        "choices": {
+                                            "A": "sugar dissolving in water",
+                                            "B": "water evaporating in air",
+                                            "C": "lighting a match",
+                                            "D": "freezing water"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: lighting a match"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which type of water reservoir contains the largest volume of fresh water?",
+                                        "choices": {
+                                            "A": "lakes",
+                                            "B": "rivers",
+                                            "C": "ice sheets",
+                                            "D": "aquifers"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: ice sheets"
+                            }
+                        ],
+                        "incorrect": [],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 10,
+                        "num_incorrect": 0,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 1.0,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                1.0,
+                                1.0
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.0
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 0,
+                            "±3%": 0,
+                            "±5%": 0
+                        }
+                    }
+                }
+            }
+        },
+        "gpt-3.5-turbo-0613": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is an example of liquid water?",
+                                        "choices": {
+                                            "A": "Frost",
+                                            "B": "Ice",
+                                            "C": "Rain",
+                                            "D": "Steam"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: Rain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: Oceans change temperature slowly and regulate the temperature of nearby land."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Metal atoms will most likely form ions by the",
+                                        "choices": {
+                                            "A": "loss of electrons.",
+                                            "B": "loss of protons.",
+                                            "C": "gain of electrons.",
+                                            "D": "gain of protons."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: loss of electrons."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When performing an experiment for a science fair, what should be done if the data do not support the hypothesis?",
+                                        "choices": {
+                                            "A": "Check for errors and run the experiment again.",
+                                            "B": "Change the hypothesis to match the conclusion.",
+                                            "C": "Change the variable so the data will match the hypothesis.",
+                                            "D": "Ignore the data and prepare the science fair display anyway."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: Check for errors and run the experiment again."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The structures found in a living cell can be compared to the parts of a factory that produces cars. Which part of the factory is most similar to the nucleus of a living cell?",
+                                        "choices": {
+                                            "A": "a conveyor belt that transports materials",
+                                            "B": "a storage bin that holds the pieces needed to assemble a car",
+                                            "C": "the computer room that controls the assembly process",
+                                            "D": "the generator that provides energy for the factory"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: the computer room that controls the assembly process"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student is watching a local television weather report for Gloucester, Massachusetts. Which of the following is most likely included in this weather report?",
+                                        "choices": {
+                                            "A": "the speed of currents in a river",
+                                            "B": "the amount of moisture in the air",
+                                            "C": "the depth of currents in the ocean",
+                                            "D": "the level of moisture in the ground"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "B: the amount of moisture in the air"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When high winds knocked down pine trees in a wooded region, it created a gap in the crowded canopy and allowed sunlight to fall on the ground. The increased sunlight allowed a dense growth of raspberry plants which protected young pine seedlings from being eaten by herbivores. Over time, the pine seedlings grew and blocked sunlight from falling on the woodland floor, thereby preventing growth of more raspberry plants. Which of these terms best describes the process of change observed in this woodlands community?",
+                                        "choices": {
+                                            "A": "adaptation",
+                                            "B": "cooperation",
+                                            "C": "natural selection",
+                                            "D": "ecological succession"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: ecological succession"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Researchers work in teams to make cars more fuel efficient. Which of these statements describes the main advantage of working in teams rather than working individually?",
+                                        "choices": {
+                                            "A": "The research is more likely to be published.",
+                                            "B": "The research costs less to perform.",
+                                            "C": "The researchers can share their ideas.",
+                                            "D": "The researchers have more time to complete work."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: The researchers can share their ideas."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which activity is an example of a chemical change?",
+                                        "choices": {
+                                            "A": "sugar dissolving in water",
+                                            "B": "water evaporating in air",
+                                            "C": "lighting a match",
+                                            "D": "freezing water"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: lighting a match"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which type of water reservoir contains the largest volume of fresh water?",
+                                        "choices": {
+                                            "A": "lakes",
+                                            "B": "rivers",
+                                            "C": "ice sheets",
+                                            "D": "aquifers"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: ice sheets"
+                            }
+                        ],
+                        "incorrect": [],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 10,
+                        "num_incorrect": 0,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 1.0,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                1.0,
+                                1.0
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.0
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 0,
+                            "±3%": 0,
+                            "±5%": 0
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is an example of liquid water?",
+                                        "choices": {
+                                            "A": "Frost",
+                                            "B": "Ice",
+                                            "C": "Rain",
+                                            "D": "Steam"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: Rain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: Oceans change temperature slowly and regulate the temperature of nearby land."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Metal atoms will most likely form ions by the",
+                                        "choices": {
+                                            "A": "loss of electrons.",
+                                            "B": "loss of protons.",
+                                            "C": "gain of electrons.",
+                                            "D": "gain of protons."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: loss of electrons."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When performing an experiment for a science fair, what should be done if the data do not support the hypothesis?",
+                                        "choices": {
+                                            "A": "Check for errors and run the experiment again.",
+                                            "B": "Change the hypothesis to match the conclusion.",
+                                            "C": "Change the variable so the data will match the hypothesis.",
+                                            "D": "Ignore the data and prepare the science fair display anyway."
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: Check for errors and run the experiment again."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The structures found in a living cell can be compared to the parts of a factory that produces cars. Which part of the factory is most similar to the nucleus of a living cell?",
+                                        "choices": {
+                                            "A": "a conveyor belt that transports materials",
+                                            "B": "a storage bin that holds the pieces needed to assemble a car",
+                                            "C": "the computer room that controls the assembly process",
+                                            "D": "the generator that provides energy for the factory"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: the computer room that controls the assembly process"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student is watching a local television weather report for Gloucester, Massachusetts. Which of the following is most likely included in this weather report?",
+                                        "choices": {
+                                            "A": "the speed of currents in a river",
+                                            "B": "the amount of moisture in the air",
+                                            "C": "the depth of currents in the ocean",
+                                            "D": "the level of moisture in the ground"
+                                        }
+                                    },
+                                    "target": "B"
+                                },
+                                "prediction": "B",
+                                "llm_response": "B: the amount of moisture in the air"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "When high winds knocked down pine trees in a wooded region, it created a gap in the crowded canopy and allowed sunlight to fall on the ground. The increased sunlight allowed a dense growth of raspberry plants which protected young pine seedlings from being eaten by herbivores. Over time, the pine seedlings grew and blocked sunlight from falling on the woodland floor, thereby preventing growth of more raspberry plants. Which of these terms best describes the process of change observed in this woodlands community?",
+                                        "choices": {
+                                            "A": "adaptation",
+                                            "B": "cooperation",
+                                            "C": "natural selection",
+                                            "D": "ecological succession"
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: ecological succession"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Researchers work in teams to make cars more fuel efficient. Which of these statements describes the main advantage of working in teams rather than working individually?",
+                                        "choices": {
+                                            "A": "The research is more likely to be published.",
+                                            "B": "The research costs less to perform.",
+                                            "C": "The researchers can share their ideas.",
+                                            "D": "The researchers have more time to complete work."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: The researchers can share their ideas."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which activity is an example of a chemical change?",
+                                        "choices": {
+                                            "A": "sugar dissolving in water",
+                                            "B": "water evaporating in air",
+                                            "C": "lighting a match",
+                                            "D": "freezing water"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: lighting a match"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which type of water reservoir contains the largest volume of fresh water?",
+                                        "choices": {
+                                            "A": "lakes",
+                                            "B": "rivers",
+                                            "C": "ice sheets",
+                                            "D": "aquifers"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: ice sheets"
+                            }
+                        ],
+                        "incorrect": [],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 10,
+                        "num_incorrect": 0,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 1.0,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                1.0,
+                                1.0
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.0
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 0,
+                            "±3%": 0,
+                            "±5%": 0
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "llm_stats": {
+        "token_usage": {},
+        "total_prompt_tokens": 0,
+        "total_completion_tokens": 0,
+        "total_tokens": 0,
+        "total_cost": "0"
+    },
+    "timestamp": "2024-04-22T14:12:47.653449"
+}

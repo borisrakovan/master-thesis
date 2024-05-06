@@ -6,9 +6,9 @@ models:
   - "meta-llama/Llama-2-13b-chat-hf"
   - "meta-llama/Llama-2-70b-chat-hf"
   - "gpt-3.5-turbo-0613"
-  - "gemini-1.0-pro"
+#  - "gemini-1.0-pro"
 prompts:
-  system: "imdb_system.jinja2"
+  system: "system_generic.jinja2"
   user:
     - name: "Baseline"
       file: "ics_imdb_baseline.jinja2"

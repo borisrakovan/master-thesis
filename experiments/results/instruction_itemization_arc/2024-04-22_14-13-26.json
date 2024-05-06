@@ -1,0 +1,1573 @@
+{
+    "experiment": {
+        "slug": "instruction_itemization_arc",
+        "name": "Instruction itemization ARC multiple choice QA",
+        "experiment_type": "INSTRUCTION_ITEMIZATION",
+        "task_type": "ARC_MULTIPLE_CHOICE_QA",
+        "models": [
+            "meta-llama/Llama-2-7b-chat-hf",
+            "meta-llama/Llama-2-13b-chat-hf",
+            "meta-llama/Llama-2-70b-chat-hf",
+            "gpt-3.5-turbo-0613"
+        ],
+        "prompts": {
+            "user": [
+                {
+                    "name": "Baseline"
+                },
+                {
+                    "name": "Itemized"
+                }
+            ]
+        }
+    },
+    "options": {
+        "random_seed": 50,
+        "num_samples": 10
+    },
+    "results": {
+        "meta-llama/Llama-2-7b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The gravitational force exerted by an object depends on its",
+                                        "choices": {
+                                            "A": "volume.",
+                                            "B": "weight.",
+                                            "C": "mass.",
+                                            "D": "size."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C) mass.\nThe gravitational force exerted by an object depends on its mass, not its volume, weight, or size."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is a mixture?",
+                                        "choices": {
+                                            "A": "salt water",
+                                            "B": "sugar",
+                                            "C": "water vapor",
+                                            "D": "salt"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  Based on the information provided in the question, the correct answer is (A) salt water. Therefore, I would label my response as A."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of the following best explains why many species of birds in New England fly south for the winter months?",
+                                        "choices": {
+                                            "A": "to find a place to hibernate",
+                                            "B": "to move away from strong sunlight",
+                                            "C": "to find an environment with more food",
+                                            "D": "to move away from crowded environments"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: to find an environment with more food.\n\nExplanation: Many species of birds in New England fly south for the winter months in search of a more abundant food supply. The winter months in New England can be harsh, with limited food availability, making it difficult for birds to survive in their native habitats. By flying south, birds can access a more diverse and abundant food supply, which is essential for their survival"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "What structure can be found in both a virus and a cell?",
+                                        "choices": {
+                                            "A": "nucleic acid chain",
+                                            "B": "Golgi apparatus",
+                                            "C": "endoplasmic reticulum",
+                                            "D": "nuclear membrane"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is (A): nucleic acid chain. Both viruses and cells contain nucleic acid chains, such as DNA or RNA, which are essential for their replication and survival. Therefore, option (A) is the correct answer."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Dawn brought a chocolate bar for lunch, but the chocolate melted in her backpack. Dawn wants to perform a scientific investigation to determine the reason her chocolate bar melted in her backpack. Which hypothesis should Dawn use for her investigation?",
+                                        "choices": {
+                                            "A": "Chocolate will taste better when melted.",
+                                            "B": "Chocolate will taste the same even when melted.",
+                                            "C": "If the chocolate is broken then the chocolate will melt.",
+                                            "D": "If heat is added to chocolate then the chocolate will melt."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D) If heat is added to chocolate then the chocolate will melt."
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student accidentally drops a test tube that breaks when it hits the floor. Which method is the best way to retrieve the broken glass?",
+                                        "choices": {
+                                            "A": "pick up the pieces with a paper towel",
+                                            "B": "use a chemical spill kit",
+                                            "C": "use a dustpan and broom",
+                                            "D": "pick up the pieces by hand"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D) pick up the pieces by hand."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  The correct answer is (B): Landlocked areas are usually at a lower altitude than coastline areas.\nExplanation:\nAreas in the middle of a large continent are typically at a lower altitude than coastal areas because the continent is surrounded by mountains or hills that block the flow of air masses and create a rain shadow effect. This means that the air is forced to rise and cool as it flows over the mountains, resulting in a more extreme difference in temperature between the"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Repeating experiments improves the likelihood of accurate results because the overall results are",
+                                        "choices": {
+                                            "A": "less likely to prove the hypothesis correct.",
+                                            "B": "more likely to prove the hypothesis correct.",
+                                            "C": "less likely to be correct due to fewer errors being made.",
+                                            "D": "more likely to be correct due to fewer errors being made."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  The correct answer is (B) More likely to prove the hypothesis correct.\nRepeating experiments can improve the likelihood of accurate results because the more times an experiment is repeated, the more data is collected, which can lead to more reliable and accurate results. Therefore, the correct answer is (B)."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "All of these are ways to stay safe around electricity except",
+                                        "choices": {
+                                            "A": "staying away from power lines.",
+                                            "B": "using cords in good condition.",
+                                            "C": "plugging many appliances into one outlet.",
+                                            "D": "keeping electricity away from water."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D) keeping electricity away from water."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The cellular membrane surrounds every human cell. The membrane protects the cell and transmits information about the cell's surroundings to organelles inside the cell. What organ system provides a similar function in the human body?",
+                                        "choices": {
+                                            "A": "endocrine system",
+                                            "B": "skeletal system",
+                                            "C": "integumentary system",
+                                            "D": "lymphatic system"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D) lymphatic system."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 5,
+                        "num_incorrect": 5,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.5,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.19,
+                                0.81
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.31
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 9604,
+                            "±3%": 1067,
+                            "±5%": 384
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The gravitational force exerted by an object depends on its",
+                                        "choices": {
+                                            "A": "volume.",
+                                            "B": "weight.",
+                                            "C": "mass.",
+                                            "D": "size."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is (C) mass.\nTherefore, my response is: C"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is a mixture?",
+                                        "choices": {
+                                            "A": "salt water",
+                                            "B": "sugar",
+                                            "C": "water vapor",
+                                            "D": "salt"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  The correct answer is (A) salt water. Therefore, my response is: A"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of the following best explains why many species of birds in New England fly south for the winter months?",
+                                        "choices": {
+                                            "A": "to find a place to hibernate",
+                                            "B": "to move away from strong sunlight",
+                                            "C": "to find an environment with more food",
+                                            "D": "to move away from crowded environments"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: to find an environment with more food."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "What structure can be found in both a virus and a cell?",
+                                        "choices": {
+                                            "A": "nucleic acid chain",
+                                            "B": "Golgi apparatus",
+                                            "C": "endoplasmic reticulum",
+                                            "D": "nuclear membrane"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  Based on the information provided in the question, the correct answer is:\nA: nucleic acid chain.\nTherefore, my response is: A."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Dawn brought a chocolate bar for lunch, but the chocolate melted in her backpack. Dawn wants to perform a scientific investigation to determine the reason her chocolate bar melted in her backpack. Which hypothesis should Dawn use for her investigation?",
+                                        "choices": {
+                                            "A": "Chocolate will taste better when melted.",
+                                            "B": "Chocolate will taste the same even when melted.",
+                                            "C": "If the chocolate is broken then the chocolate will melt.",
+                                            "D": "If heat is added to chocolate then the chocolate will melt."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is:\nD: If heat is added to chocolate then the chocolate will melt.\nTherefore, I will label my response as D."
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student accidentally drops a test tube that breaks when it hits the floor. Which method is the best way to retrieve the broken glass?",
+                                        "choices": {
+                                            "A": "pick up the pieces with a paper towel",
+                                            "B": "use a chemical spill kit",
+                                            "C": "use a dustpan and broom",
+                                            "D": "pick up the pieces by hand"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D) pick up the pieces by hand."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is:\nC: Coastlines are usually surrounded by mountains that block air masses.\n\nExplanation:\nAreas in the middle of a large continent are generally more isolated from the moderating influence of the ocean, which can help regulate temperature. Coastlines are often surrounded by mountains or other topographic features that block air masses and create microclimates, which can lead to more extreme temperature differences between the coast and inland areas."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Repeating experiments improves the likelihood of accurate results because the overall results are",
+                                        "choices": {
+                                            "A": "less likely to prove the hypothesis correct.",
+                                            "B": "more likely to prove the hypothesis correct.",
+                                            "C": "less likely to be correct due to fewer errors being made.",
+                                            "D": "more likely to be correct due to fewer errors being made."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  The correct answer is (B) More likely to prove the hypothesis correct."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "All of these are ways to stay safe around electricity except",
+                                        "choices": {
+                                            "A": "staying away from power lines.",
+                                            "B": "using cords in good condition.",
+                                            "C": "plugging many appliances into one outlet.",
+                                            "D": "keeping electricity away from water."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D) keeping electricity away from water."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The cellular membrane surrounds every human cell. The membrane protects the cell and transmits information about the cell's surroundings to organelles inside the cell. What organ system provides a similar function in the human body?",
+                                        "choices": {
+                                            "A": "endocrine system",
+                                            "B": "skeletal system",
+                                            "C": "integumentary system",
+                                            "D": "lymphatic system"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  The correct answer is (D) lymphatic system."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 5,
+                        "num_incorrect": 5,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.5,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.19,
+                                0.81
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.31
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 9604,
+                            "±3%": 1067,
+                            "±5%": 384
+                        }
+                    }
+                }
+            }
+        },
+        "meta-llama/Llama-2-13b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The gravitational force exerted by an object depends on its",
+                                        "choices": {
+                                            "A": "volume.",
+                                            "B": "weight.",
+                                            "C": "mass.",
+                                            "D": "size."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! The correct answer is:\n\nC: mass."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student accidentally drops a test tube that breaks when it hits the floor. Which method is the best way to retrieve the broken glass?",
+                                        "choices": {
+                                            "A": "pick up the pieces with a paper towel",
+                                            "B": "use a chemical spill kit",
+                                            "C": "use a dustpan and broom",
+                                            "D": "pick up the pieces by hand"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! The correct answer is:\n\nC: use a dustpan and broom."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Here's the answer:\n\nD: Oceans change temperature slowly and regulate the temperature of nearby land."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of the following best explains why many species of birds in New England fly south for the winter months?",
+                                        "choices": {
+                                            "A": "to find a place to hibernate",
+                                            "B": "to move away from strong sunlight",
+                                            "C": "to find an environment with more food",
+                                            "D": "to move away from crowded environments"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: to find an environment with more food."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "What structure can be found in both a virus and a cell?",
+                                        "choices": {
+                                            "A": "nucleic acid chain",
+                                            "B": "Golgi apparatus",
+                                            "C": "endoplasmic reticulum",
+                                            "D": "nuclear membrane"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  Sure! The correct answer is:\n\nA: nucleic acid chain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The cellular membrane surrounds every human cell. The membrane protects the cell and transmits information about the cell's surroundings to organelles inside the cell. What organ system provides a similar function in the human body?",
+                                        "choices": {
+                                            "A": "endocrine system",
+                                            "B": "skeletal system",
+                                            "C": "integumentary system",
+                                            "D": "lymphatic system"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! The correct answer is C: integumentary system. The cellular membrane and the integumentary system both serve to protect and transmit information about the body's surroundings."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Dawn brought a chocolate bar for lunch, but the chocolate melted in her backpack. Dawn wants to perform a scientific investigation to determine the reason her chocolate bar melted in her backpack. Which hypothesis should Dawn use for her investigation?",
+                                        "choices": {
+                                            "A": "Chocolate will taste better when melted.",
+                                            "B": "Chocolate will taste the same even when melted.",
+                                            "C": "If the chocolate is broken then the chocolate will melt.",
+                                            "D": "If heat is added to chocolate then the chocolate will melt."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! The correct answer is:\n\nD: If heat is added to chocolate then the chocolate will melt."
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Repeating experiments improves the likelihood of accurate results because the overall results are",
+                                        "choices": {
+                                            "A": "less likely to prove the hypothesis correct.",
+                                            "B": "more likely to prove the hypothesis correct.",
+                                            "C": "less likely to be correct due to fewer errors being made.",
+                                            "D": "more likely to be correct due to fewer errors being made."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  Sure! Here's my answer:\n\nB: more likely to prove the hypothesis correct."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "All of these are ways to stay safe around electricity except",
+                                        "choices": {
+                                            "A": "staying away from power lines.",
+                                            "B": "using cords in good condition.",
+                                            "C": "plugging many appliances into one outlet.",
+                                            "D": "keeping electricity away from water."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! The correct answer is D: keeping electricity away from water. The other options are not safe practices around electricity."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is a mixture?",
+                                        "choices": {
+                                            "A": "salt water",
+                                            "B": "sugar",
+                                            "C": "water vapor",
+                                            "D": "salt"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  Sure! The correct answer is:\n\nB: sugar"
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 7,
+                        "num_incorrect": 3,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.7,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.42,
+                                0.98
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.28
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 8067,
+                            "±3%": 896,
+                            "±5%": 323
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The gravitational force exerted by an object depends on its",
+                                        "choices": {
+                                            "A": "volume.",
+                                            "B": "weight.",
+                                            "C": "mass.",
+                                            "D": "size."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: mass."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student accidentally drops a test tube that breaks when it hits the floor. Which method is the best way to retrieve the broken glass?",
+                                        "choices": {
+                                            "A": "pick up the pieces with a paper towel",
+                                            "B": "use a chemical spill kit",
+                                            "C": "use a dustpan and broom",
+                                            "D": "pick up the pieces by hand"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! The correct answer is:\n\nC: use a dustpan and broom.\n\nIt is not recommended to pick up broken glass with a paper towel or by hand, as this can cause further damage and potentially lead to cuts or injuries. A dustpan and broom are the best tools to use to carefully sweep up the broken glass and dispose of it properly."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure, I can do that! Based on the information provided in the question, the correct answer is:\n\nD: Oceans change temperature slowly and regulate the temperature of nearby land.\n\nExplanation: The oceans have a moderating effect on the climate of nearby land, as they absorb and release heat slowly, regulating the temperature of the surrounding air and land. This leads to more extreme differences in temperature between coastal and inland areas."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of the following best explains why many species of birds in New England fly south for the winter months?",
+                                        "choices": {
+                                            "A": "to find a place to hibernate",
+                                            "B": "to move away from strong sunlight",
+                                            "C": "to find an environment with more food",
+                                            "D": "to move away from crowded environments"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: to find an environment with more food."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "What structure can be found in both a virus and a cell?",
+                                        "choices": {
+                                            "A": "nucleic acid chain",
+                                            "B": "Golgi apparatus",
+                                            "C": "endoplasmic reticulum",
+                                            "D": "nuclear membrane"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  Sure! Here's my answer:\n\nA: nucleic acid chain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The cellular membrane surrounds every human cell. The membrane protects the cell and transmits information about the cell's surroundings to organelles inside the cell. What organ system provides a similar function in the human body?",
+                                        "choices": {
+                                            "A": "endocrine system",
+                                            "B": "skeletal system",
+                                            "C": "integumentary system",
+                                            "D": "lymphatic system"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: integumentary system"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Dawn brought a chocolate bar for lunch, but the chocolate melted in her backpack. Dawn wants to perform a scientific investigation to determine the reason her chocolate bar melted in her backpack. Which hypothesis should Dawn use for her investigation?",
+                                        "choices": {
+                                            "A": "Chocolate will taste better when melted.",
+                                            "B": "Chocolate will taste the same even when melted.",
+                                            "C": "If the chocolate is broken then the chocolate will melt.",
+                                            "D": "If heat is added to chocolate then the chocolate will melt."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Here's the answer:\n\nD: If heat is added to chocolate then the chocolate will melt."
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Repeating experiments improves the likelihood of accurate results because the overall results are",
+                                        "choices": {
+                                            "A": "less likely to prove the hypothesis correct.",
+                                            "B": "more likely to prove the hypothesis correct.",
+                                            "C": "less likely to be correct due to fewer errors being made.",
+                                            "D": "more likely to be correct due to fewer errors being made."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "B",
+                                "llm_response": "  Sure, I'd be happy to help! Based on the information provided in the question, the correct answer is:\n\nB: more likely to prove the hypothesis correct.\n\nRepeating experiments can improve the likelihood of accurate results by increasing the confidence in the findings and reducing the likelihood of false positives or false negatives. This is because repeating an experiment can help to confirm or disconfirm the hypothesis, and can provide more precise estimates of the effect size and"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "All of these are ways to stay safe around electricity except",
+                                        "choices": {
+                                            "A": "staying away from power lines.",
+                                            "B": "using cords in good condition.",
+                                            "C": "plugging many appliances into one outlet.",
+                                            "D": "keeping electricity away from water."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  Sure! Here's my answer:\n\nD: keeping electricity away from water."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is a mixture?",
+                                        "choices": {
+                                            "A": "salt water",
+                                            "B": "sugar",
+                                            "C": "water vapor",
+                                            "D": "salt"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  Sure! Here's my answer:\n\nC: water vapor"
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 7,
+                        "num_incorrect": 3,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.7,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.42,
+                                0.98
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.28
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 8067,
+                            "±3%": 896,
+                            "±5%": 323
+                        }
+                    }
+                }
+            }
+        },
+        "meta-llama/Llama-2-70b-chat-hf": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The gravitational force exerted by an object depends on its",
+                                        "choices": {
+                                            "A": "volume.",
+                                            "B": "weight.",
+                                            "C": "mass.",
+                                            "D": "size."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student accidentally drops a test tube that breaks when it hits the floor. Which method is the best way to retrieve the broken glass?",
+                                        "choices": {
+                                            "A": "pick up the pieces with a paper towel",
+                                            "B": "use a chemical spill kit",
+                                            "C": "use a dustpan and broom",
+                                            "D": "pick up the pieces by hand"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: use a dustpan and broom"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: Oceans change temperature slowly and regulate the temperature of nearby land.\n\nExplanation: Oceans have a high heat capacity, meaning they can absorb and release heat slowly, which helps regulate the temperature of nearby land. This moderating effect of the ocean results in less extreme temperature differences in coastal areas compared to inland areas. In contrast, areas in the middle of a large continent, away from the moderating influence of the ocean, can experience"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "All of these are ways to stay safe around electricity except",
+                                        "choices": {
+                                            "A": "staying away from power lines.",
+                                            "B": "using cords in good condition.",
+                                            "C": "plugging many appliances into one outlet.",
+                                            "D": "keeping electricity away from water."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is C: plugging many appliances into one outlet.\n\nExplanation:\n\n* A: Staying away from power lines is a way to stay safe around electricity.\n* B: Using cords in good condition is a way to stay safe around electricity.\n* D: Keeping electricity away from water is a way to stay safe around electricity.\n* C: Plugging many appliances into one"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is a mixture?",
+                                        "choices": {
+                                            "A": "salt water",
+                                            "B": "sugar",
+                                            "C": "water vapor",
+                                            "D": "salt"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  A: salt water"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of the following best explains why many species of birds in New England fly south for the winter months?",
+                                        "choices": {
+                                            "A": "to find a place to hibernate",
+                                            "B": "to move away from strong sunlight",
+                                            "C": "to find an environment with more food",
+                                            "D": "to move away from crowded environments"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: to find an environment with more food.\n\nMany species of birds in New England fly south for the winter months to find an environment with more food. The southern regions offer a more abundant supply of food, such as insects, seeds, and berries, which are scarce in the north during the winter months. This allows the birds to survive and thrive during the harsh winter months.\n\nTherefore, option C is the correct answer."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "What structure can be found in both a virus and a cell?",
+                                        "choices": {
+                                            "A": "nucleic acid chain",
+                                            "B": "Golgi apparatus",
+                                            "C": "endoplasmic reticulum",
+                                            "D": "nuclear membrane"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  A: nucleic acid chain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The cellular membrane surrounds every human cell. The membrane protects the cell and transmits information about the cell's surroundings to organelles inside the cell. What organ system provides a similar function in the human body?",
+                                        "choices": {
+                                            "A": "endocrine system",
+                                            "B": "skeletal system",
+                                            "C": "integumentary system",
+                                            "D": "lymphatic system"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: integumentary system"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Dawn brought a chocolate bar for lunch, but the chocolate melted in her backpack. Dawn wants to perform a scientific investigation to determine the reason her chocolate bar melted in her backpack. Which hypothesis should Dawn use for her investigation?",
+                                        "choices": {
+                                            "A": "Chocolate will taste better when melted.",
+                                            "B": "Chocolate will taste the same even when melted.",
+                                            "C": "If the chocolate is broken then the chocolate will melt.",
+                                            "D": "If heat is added to chocolate then the chocolate will melt."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: If heat is added to chocolate then the chocolate will melt.\n\nDawn's investigation should focus on the effect of heat on the chocolate bar, as the melting of the chocolate is likely due to the increased temperature inside her backpack. This hypothesis will allow her to test the relationship between heat and the melting of chocolate, and potentially identify other factors that may have contributed to the melting, such as the type"
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Repeating experiments improves the likelihood of accurate results because the overall results are",
+                                        "choices": {
+                                            "A": "less likely to prove the hypothesis correct.",
+                                            "B": "more likely to prove the hypothesis correct.",
+                                            "C": "less likely to be correct due to fewer errors being made.",
+                                            "D": "more likely to be correct due to fewer errors being made."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: less likely to be correct due to fewer errors being made.\n\nRepeating experiments helps to reduce the likelihood of errors and increase the accuracy of results, therefore, the correct answer is C."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 9,
+                        "num_incorrect": 1,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.9,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.71,
+                                1.09
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.19
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 3457,
+                            "±3%": 384,
+                            "±5%": 138
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The gravitational force exerted by an object depends on its",
+                                        "choices": {
+                                            "A": "volume.",
+                                            "B": "weight.",
+                                            "C": "mass.",
+                                            "D": "size."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student accidentally drops a test tube that breaks when it hits the floor. Which method is the best way to retrieve the broken glass?",
+                                        "choices": {
+                                            "A": "pick up the pieces with a paper towel",
+                                            "B": "use a chemical spill kit",
+                                            "C": "use a dustpan and broom",
+                                            "D": "pick up the pieces by hand"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: use a dustpan and broom"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: Oceans change temperature slowly and regulate the temperature of nearby land.\n\nCorrect answer: D"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "All of these are ways to stay safe around electricity except",
+                                        "choices": {
+                                            "A": "staying away from power lines.",
+                                            "B": "using cords in good condition.",
+                                            "C": "plugging many appliances into one outlet.",
+                                            "D": "keeping electricity away from water."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  The correct answer is C: plugging many appliances into one outlet.\n\nThis is an unsafe practice as it can cause overheating and potentially lead to an electrical fire. The other options are all ways to stay safe around electricity: staying away from power lines, using cords in good condition, and keeping electricity away from water."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is a mixture?",
+                                        "choices": {
+                                            "A": "salt water",
+                                            "B": "sugar",
+                                            "C": "water vapor",
+                                            "D": "salt"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  A: salt water"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of the following best explains why many species of birds in New England fly south for the winter months?",
+                                        "choices": {
+                                            "A": "to find a place to hibernate",
+                                            "B": "to move away from strong sunlight",
+                                            "C": "to find an environment with more food",
+                                            "D": "to move away from crowded environments"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: to find an environment with more food"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "What structure can be found in both a virus and a cell?",
+                                        "choices": {
+                                            "A": "nucleic acid chain",
+                                            "B": "Golgi apparatus",
+                                            "C": "endoplasmic reticulum",
+                                            "D": "nuclear membrane"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "  A: nucleic acid chain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The cellular membrane surrounds every human cell. The membrane protects the cell and transmits information about the cell's surroundings to organelles inside the cell. What organ system provides a similar function in the human body?",
+                                        "choices": {
+                                            "A": "endocrine system",
+                                            "B": "skeletal system",
+                                            "C": "integumentary system",
+                                            "D": "lymphatic system"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: integumentary system"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Dawn brought a chocolate bar for lunch, but the chocolate melted in her backpack. Dawn wants to perform a scientific investigation to determine the reason her chocolate bar melted in her backpack. Which hypothesis should Dawn use for her investigation?",
+                                        "choices": {
+                                            "A": "Chocolate will taste better when melted.",
+                                            "B": "Chocolate will taste the same even when melted.",
+                                            "C": "If the chocolate is broken then the chocolate will melt.",
+                                            "D": "If heat is added to chocolate then the chocolate will melt."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "  D: If heat is added to chocolate then the chocolate will melt.\n\nThis is the correct hypothesis for Dawn's investigation because it addresses the possible cause of the chocolate melting, which is the addition of heat. The other options do not address the cause of the melting chocolate and are not relevant to the investigation."
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Repeating experiments improves the likelihood of accurate results because the overall results are",
+                                        "choices": {
+                                            "A": "less likely to prove the hypothesis correct.",
+                                            "B": "more likely to prove the hypothesis correct.",
+                                            "C": "less likely to be correct due to fewer errors being made.",
+                                            "D": "more likely to be correct due to fewer errors being made."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "C",
+                                "llm_response": "  C: less likely to be correct due to fewer errors being made.\n\nRepeating experiments helps to reduce the likelihood of errors and increase the accuracy of results, therefore, the correct answer is C."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 9,
+                        "num_incorrect": 1,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.9,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.71,
+                                1.09
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.19
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 3457,
+                            "±3%": 384,
+                            "±5%": 138
+                        }
+                    }
+                }
+            }
+        },
+        "gpt-3.5-turbo-0613": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The gravitational force exerted by an object depends on its",
+                                        "choices": {
+                                            "A": "volume.",
+                                            "B": "weight.",
+                                            "C": "mass.",
+                                            "D": "size."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: mass."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student accidentally drops a test tube that breaks when it hits the floor. Which method is the best way to retrieve the broken glass?",
+                                        "choices": {
+                                            "A": "pick up the pieces with a paper towel",
+                                            "B": "use a chemical spill kit",
+                                            "C": "use a dustpan and broom",
+                                            "D": "pick up the pieces by hand"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: use a dustpan and broom"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: Oceans change temperature slowly and regulate the temperature of nearby land."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Repeating experiments improves the likelihood of accurate results because the overall results are",
+                                        "choices": {
+                                            "A": "less likely to prove the hypothesis correct.",
+                                            "B": "more likely to prove the hypothesis correct.",
+                                            "C": "less likely to be correct due to fewer errors being made.",
+                                            "D": "more likely to be correct due to fewer errors being made."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: more likely to be correct due to fewer errors being made."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "All of these are ways to stay safe around electricity except",
+                                        "choices": {
+                                            "A": "staying away from power lines.",
+                                            "B": "using cords in good condition.",
+                                            "C": "plugging many appliances into one outlet.",
+                                            "D": "keeping electricity away from water."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: plugging many appliances into one outlet."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is a mixture?",
+                                        "choices": {
+                                            "A": "salt water",
+                                            "B": "sugar",
+                                            "C": "water vapor",
+                                            "D": "salt"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of the following best explains why many species of birds in New England fly south for the winter months?",
+                                        "choices": {
+                                            "A": "to find a place to hibernate",
+                                            "B": "to move away from strong sunlight",
+                                            "C": "to find an environment with more food",
+                                            "D": "to move away from crowded environments"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: to find an environment with more food"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "What structure can be found in both a virus and a cell?",
+                                        "choices": {
+                                            "A": "nucleic acid chain",
+                                            "B": "Golgi apparatus",
+                                            "C": "endoplasmic reticulum",
+                                            "D": "nuclear membrane"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: nucleic acid chain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The cellular membrane surrounds every human cell. The membrane protects the cell and transmits information about the cell's surroundings to organelles inside the cell. What organ system provides a similar function in the human body?",
+                                        "choices": {
+                                            "A": "endocrine system",
+                                            "B": "skeletal system",
+                                            "C": "integumentary system",
+                                            "D": "lymphatic system"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: integumentary system"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Dawn brought a chocolate bar for lunch, but the chocolate melted in her backpack. Dawn wants to perform a scientific investigation to determine the reason her chocolate bar melted in her backpack. Which hypothesis should Dawn use for her investigation?",
+                                        "choices": {
+                                            "A": "Chocolate will taste better when melted.",
+                                            "B": "Chocolate will taste the same even when melted.",
+                                            "C": "If the chocolate is broken then the chocolate will melt.",
+                                            "D": "If heat is added to chocolate then the chocolate will melt."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: If heat is added to chocolate then the chocolate will melt."
+                            }
+                        ],
+                        "incorrect": [],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 10,
+                        "num_incorrect": 0,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 1.0,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                1.0,
+                                1.0
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.0
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 0,
+                            "±3%": 0,
+                            "±5%": 0
+                        }
+                    }
+                },
+                "Itemized": {
+                    "samples": {
+                        "correct": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The gravitational force exerted by an object depends on its",
+                                        "choices": {
+                                            "A": "volume.",
+                                            "B": "weight.",
+                                            "C": "mass.",
+                                            "D": "size."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: mass."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "A student accidentally drops a test tube that breaks when it hits the floor. Which method is the best way to retrieve the broken glass?",
+                                        "choices": {
+                                            "A": "pick up the pieces with a paper towel",
+                                            "B": "use a chemical spill kit",
+                                            "C": "use a dustpan and broom",
+                                            "D": "pick up the pieces by hand"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: use a dustpan and broom"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Why do areas in the middle of a large continent generally have more extreme differences in temperature than areas near the coastline?",
+                                        "choices": {
+                                            "A": "There are generally more clouds near the oceans.",
+                                            "B": "Landlocked areas are usually at a lower altitude than coastline areas.",
+                                            "C": "Coastlines are usually surrounded by mountains that block air masses.",
+                                            "D": "Oceans change temperature slowly and regulate the temperature of nearby land."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: Oceans change temperature slowly and regulate the temperature of nearby land."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "All of these are ways to stay safe around electricity except",
+                                        "choices": {
+                                            "A": "staying away from power lines.",
+                                            "B": "using cords in good condition.",
+                                            "C": "plugging many appliances into one outlet.",
+                                            "D": "keeping electricity away from water."
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: plugging many appliances into one outlet."
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of these is a mixture?",
+                                        "choices": {
+                                            "A": "salt water",
+                                            "B": "sugar",
+                                            "C": "water vapor",
+                                            "D": "salt"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Which of the following best explains why many species of birds in New England fly south for the winter months?",
+                                        "choices": {
+                                            "A": "to find a place to hibernate",
+                                            "B": "to move away from strong sunlight",
+                                            "C": "to find an environment with more food",
+                                            "D": "to move away from crowded environments"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: to find an environment with more food"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "What structure can be found in both a virus and a cell?",
+                                        "choices": {
+                                            "A": "nucleic acid chain",
+                                            "B": "Golgi apparatus",
+                                            "C": "endoplasmic reticulum",
+                                            "D": "nuclear membrane"
+                                        }
+                                    },
+                                    "target": "A"
+                                },
+                                "prediction": "A",
+                                "llm_response": "A: nucleic acid chain"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "The cellular membrane surrounds every human cell. The membrane protects the cell and transmits information about the cell's surroundings to organelles inside the cell. What organ system provides a similar function in the human body?",
+                                        "choices": {
+                                            "A": "endocrine system",
+                                            "B": "skeletal system",
+                                            "C": "integumentary system",
+                                            "D": "lymphatic system"
+                                        }
+                                    },
+                                    "target": "C"
+                                },
+                                "prediction": "C",
+                                "llm_response": "C: integumentary system"
+                            },
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Dawn brought a chocolate bar for lunch, but the chocolate melted in her backpack. Dawn wants to perform a scientific investigation to determine the reason her chocolate bar melted in her backpack. Which hypothesis should Dawn use for her investigation?",
+                                        "choices": {
+                                            "A": "Chocolate will taste better when melted.",
+                                            "B": "Chocolate will taste the same even when melted.",
+                                            "C": "If the chocolate is broken then the chocolate will melt.",
+                                            "D": "If heat is added to chocolate then the chocolate will melt."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "D",
+                                "llm_response": "D: If heat is added to chocolate then the chocolate will melt."
+                            }
+                        ],
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": {
+                                        "question": "Repeating experiments improves the likelihood of accurate results because the overall results are",
+                                        "choices": {
+                                            "A": "less likely to prove the hypothesis correct.",
+                                            "B": "more likely to prove the hypothesis correct.",
+                                            "C": "less likely to be correct due to fewer errors being made.",
+                                            "D": "more likely to be correct due to fewer errors being made."
+                                        }
+                                    },
+                                    "target": "D"
+                                },
+                                "prediction": "B",
+                                "llm_response": "B: more likely to prove the hypothesis correct."
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 9,
+                        "num_incorrect": 1,
+                        "num_invalid": 0,
+                        "total": 10,
+                        "accuracy": 0.9,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.71,
+                                1.09
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.19
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 3457,
+                            "±3%": 384,
+                            "±5%": 138
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "llm_stats": {
+        "token_usage": {},
+        "total_prompt_tokens": 0,
+        "total_completion_tokens": 0,
+        "total_tokens": 0,
+        "total_cost": "0"
+    },
+    "timestamp": "2024-04-22T14:13:26.068178"
+}

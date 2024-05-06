@@ -21,7 +21,9 @@ def store_experiment_run(experiment_run: ExperimentRun, result_table: str) -> No
     exp_dir.mkdir(parents=True, exist_ok=True)
 
     with exp_path.open("w") as out:
-        out.write(experiment_run.model_dump_json(indent=4))
+        out.write(
+            experiment_run.model_dump_json(indent=4)
+        )
 
     with table_path.open("w") as out:
         out.write(result_table)
@@ -54,10 +56,10 @@ def make_experiment_result_table(experiment_run: ExperimentRun) -> str:
 async def main() -> None:
 
     llm = LlmService()
-    runner_options = ExperimentRunnerOptions(random_seed=46, num_samples=10)
+    runner_options = ExperimentRunnerOptions(random_seed=46, num_samples=100)
     runner = ExperimentRunner(llm=llm, options=runner_options)
     experiment = ExperimentDefinition.from_file(
-        PROJECT_ROOT / "experiments" / "instruction_context_separation_cosmos.yml"
+        PROJECT_ROOT / "experiments" / "language_correctness_cosmos.yml"
     )
     experiment_run = await runner.run(experiment)
 
