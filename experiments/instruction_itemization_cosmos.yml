@@ -1,0 +1,15 @@
+name: "Instruction itemization Cosmos QA"
+experiment_type: "INSTRUCTION_ITEMIZATION"
+task_type: "COSMOS_MULTIPLE_CHOICE_QA"
+models:
+  - "meta-llama/Llama-2-7b-chat-hf"
+  - "meta-llama/Llama-2-13b-chat-hf"
+  - "meta-llama/Llama-2-70b-chat-hf"
+  - "gpt-3.5-turbo-0613"
+prompts:
+  system: "system_generic.jinja2"
+  user:
+    - name: "Baseline"
+      file: "ii_cosmos_baseline.jinja2"
+    - name: "Itemized"
+      file: "ii_cosmos_itemized.jinja2"

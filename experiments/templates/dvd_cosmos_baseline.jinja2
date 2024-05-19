@@ -1,0 +1,11 @@
+Select the correct answer to the question by choosing the appropriate label. The response should be based solely on the provided context. Each question has a single correct answer. Your response should contain only the letter corresponding to the correct answer.
+
+Context: {{ input.context }}
+
+Question: {{ input.question }}
+
+Options:
+
+{% for label, text in input.choices.items() %}
+{{ label }}: {{ text }}
+{% endfor %}

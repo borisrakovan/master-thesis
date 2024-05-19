@@ -97,11 +97,13 @@ class ExperimentRunner:
         sample_batches = batched(samples, batch_size=self._MAX_MODEL_API_CONCURRENCY[model])
 
         invalid_samples, correct_samples, incorrect_samples = [], [], []
+        num_processed = 0
 
         for sample_batch in sample_batches:
-
+            batch_list = list(sample_batch)
+            logger.info(f"Running batch of {len(batch_list)} samples for model {model}")
             results: tuple[SampleResult] = await asyncio.gather(
-                *[evaluation_task.evaluate_sample(sample, model, prompt) for sample in sample_batch]
+                *[evaluation_task.evaluate_sample(sample, model, prompt) for sample in batch_list]
             )
 
             for idx, result in enumerate(results):
@@ -112,6 +114,9 @@ class ExperimentRunner:
                     incorrect_samples.append(result)
                 else:
                     correct_samples.append(result)
+
+            num_processed += len(results)
+            logger.info(f"Processed {num_processed} samples for model {model}")
 
         return EvaluationResult(
             samples=EvaluatedSamples(

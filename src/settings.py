@@ -22,13 +22,17 @@ class Settings(BaseSettings):
     vertexai_location: str = "us-central1"
     # vertexai_project_id: str = "valid-volt-411420"
     # vertexai_location: str = "us-central1"
-    # vertexai_location: str = "eu-central1"
+    # vertexai_location: str = "europe-cntral2"
     # vertexai_location: str = "europe-west2"
+    # vertexai_locations = [
+    #     "us-central1", "europe-west2", "europe-central2", "europe-west8", "us-west4", "europe-north1", "europe-west3",
+    #     "us-west1", "us-west2"
+    # ]
 
     llm_temperature: float = 0.0
     llm_max_tokens: int = 1000
     llm_model: ChatModel = ChatModel.GPT_35
-    llm_max_retries: int = 10
+    llm_max_retries: int = 16
     llm_timeout: int = 15
 
     accuracy_confidence_interval_level: float = 0.95

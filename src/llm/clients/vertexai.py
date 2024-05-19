@@ -27,7 +27,6 @@ class VertexAIClient(LlmClient):
             project=settings.vertexai_project_id,
             location=settings.vertexai_location,
         )
-        # TODO: figure out how to implement this
         self._statistics = LlmStatistics()
 
     async def create_chat_completion(
@@ -77,19 +76,26 @@ class VertexAIClient(LlmClient):
     @classmethod
     def _convert_messages(cls, messages: list[Message]) -> list[Content]:
 
-        assert len(messages) > 0, "Messages must not be empty"
+        assert len(messages) >= 2, "At least two messages are required"
 
-        if (system_message := messages[0]).role == MessageRole.SYSTEM:
-            assert len(messages) > 1, "System message must be followed by a user message"
-            messages = messages[1:]
-            # VertexAI doesn't support system message,
-            # so we append the system message to the beginning of the user message
-            messages[0].content = f"{system_message}\n\n{messages[0].content}"
+        assert messages[0].role == MessageRole.SYSTEM, "First message must be a system message"
+        assert messages[1].role == MessageRole.USER, "Second message must be a user message"
+
+        system_message = messages[0]
+        user_message = messages[1]
+
+        # VertexAI doesn't support system message,
+        # so we append the system message to the beginning of the user message
+        new_messages = [
+            Message(role=MessageRole.USER, content=f"{system_message.content}\n\n{user_message.content}"),
+            *messages[2:]
+        ]
+
         return [
             Content(
                 role=cls._convert_message_role(message.role),
                 parts=[Part.from_text(message.content)]
-            ) for message in messages
+            ) for message in new_messages
         ]
 
     @staticmethod

@@ -1,0 +1,18 @@
+name: "Language correctness IMDB sentiment analysis"
+experiment_type: "LANGUAGE_CORRECTNESS"
+task_type: "IMDB_SENTIMENT_ANALYSIS"
+models:
+  - "meta-llama/Llama-2-7b-chat-hf"
+  - "meta-llama/Llama-2-13b-chat-hf"
+  - "meta-llama/Llama-2-70b-chat-hf"
+  - "gpt-3.5-turbo-0613"
+#  - "gemini-1.0-pro"
+prompts:
+  system: "system_generic.jinja2"
+  user:
+    - name: "Baseline"
+      file: "lc_imdb_baseline.jinja2"
+    - name: "With grammatical errors"
+      file: "lc_imdb_grammatical_errors.jinja2"
+#    - name: "With idiomatic errors"
+#      file: "lc_imdb_idiomatic_errors.jinja2"

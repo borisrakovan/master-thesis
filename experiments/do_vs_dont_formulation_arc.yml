@@ -8,7 +8,7 @@ models:
   - "gpt-3.5-turbo-0613"
 #  - "gemini-1.0-pro"
 prompts:
-  system: "arc_system.jinja2"
+  system: "system_generic.jinja2"
   user:
     - name: "Baseline"
       file: "dvd_arc_baseline.jinja2"

@@ -68,7 +68,6 @@ def compute_confidence_interval(successes: int, total: int, confidence_level: fl
     # Calculate the sample proportion (accuracy)
     p_hat = successes / total
 
-    # todo note: only works for bernoulli
     standard_error = (p_hat * (1 - p_hat) / total) ** 0.5
 
     # Lookup the z-score for the given confidence level

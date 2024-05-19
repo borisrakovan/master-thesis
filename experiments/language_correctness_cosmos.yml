@@ -8,11 +8,11 @@ models:
   - "gpt-3.5-turbo-0613"
 #  - "gemini-1.0-pro"
 prompts:
-  system: "cosmos_system.jinja2"
+  system: "system_generic.jinja2"
   user:
     - name: "Baseline"
       file: "lc_cosmos_baseline.jinja2"
-    - name: "With errors"
-      file: "lc_cosmos_errors.jinja2"
-    - name: "With errors 2"
-      file: "lc_cosmos_errors_2.jinja2"
+    - name: "With grammatical errors"
+      file: "lc_cosmos_grammatical_errors.jinja2"
+    - name: "With idiomatic errors"
+      file: "lc_cosmos_idiomatic_errors.jinja2"

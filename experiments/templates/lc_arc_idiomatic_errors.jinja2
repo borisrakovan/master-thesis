@@ -1,0 +1,7 @@
+Choosing the correct answer by selecting label appropriate. Every question single correct answer has. Labels possible are, for example, A, B, C, D, E. Only letter corresponding to answer correct your response should contain.
+
+Question: {{ input.question }}
+
+{% for label, text in input.choices.items() %}
+{{ label }}: {{ text }}
+{% endfor %}

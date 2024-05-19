@@ -1,0 +1,2047 @@
+{
+    "experiment": {
+        "slug": "do_vs_dont_formulation_twitter",
+        "name": "Do vs dont formulation tweet sentiment analysis",
+        "experiment_type": "DO_VS_DONT_FORMULATION",
+        "task_type": "TWEET_SENTIMENT_ANALYSIS",
+        "models": [
+            "gemini-1.0-pro"
+        ],
+        "prompts": {
+            "user": [
+                {
+                    "name": "Baseline"
+                },
+                {
+                    "name": "Negative"
+                }
+            ]
+        }
+    },
+    "options": {
+        "random_seed": 46,
+        "num_samples": 500
+    },
+    "results": {
+        "gemini-1.0-pro": {
+            "prompt_results": {
+                "Baseline": {
+                    "samples": {
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": "@VirginAmerica classiq, luv Virgin America. Greetingz",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@VirginAmerica Just trying to book tickets to NYC and facing super fun broken styling. Don't worry, I'll keep trying :)",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united despite my bag not making it to Newark good informative email tracking updates help!",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united maybe one day you'll be the one quoted on http://t.co/mJkpgVXmPC",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united i need it there before she lands so she can have the EWR baggage claim file to have it sent but the employee has not droppeditoffyet",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united Woke up to notification- flight moved 1.5 hrs early. Barely made flight then 3 hrs layover in SFO - wanted to hop on earlier option",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united I would like to talk to a customer service agent about the service / non service I received on my last flight a a week or so a go.\nJ",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united This is the 2nd time I was rebooked (w/delays), and for reasons unreLate Flightd to weather. How do I go about requesting a flight voucher?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@United maybe find a different gate #ua1758",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united...do you still have flat tire policy.  Shuttle broke down on way to ORD.  Will probably miss the 425pm to CLE...Help please!!",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united - tick, tock, tick, tock, it is rapidly approaching the next dream departure of 1:45pm. When is the next fantasy departure time??",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united this customer service experience will be tweeted for quality assurance.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united any chance you could help rebook?? My flight Cancelled Flightled",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united What does delayed due to Customer Service mean for UA761?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united I'm a first time solo female traveller and it's pretty scary being in a foreign place not knowing where your belongings are...",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united flight ua90 is taking off now after 1750 was delayed over 4 hrs 30 passengers to miss their flight to tel aviv",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united what exactly do you hang on this hook? http://t.co/ZHxOk07Aqa",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": ".@united too much info to share via tweet. Please send me your name and contact info. Happy to supply you with images and CS rep names.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united First Officer of UA 1514 checking our 757 prior to departure from EWR yesterday while on his cell. Safety ??? http://t.co/1TFH2v0a7z",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united no still trying to get home.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united I may not hit any new status this year, but I’ve flown several times this year and have tried to book with y’all every time!",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united love being told you would issue a refund when you couldn't get us out of the way of a hurricane to have it denied",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united Thanks! Just DMed HN.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united all good, didn't die or anything. As they say \"you get what you pay for\"!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united looking back - never heard from anyone - I had to call and frankly got standard SOP - still think about it today",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united makes total sense, except flight wasn't full :) I've got empty seats around me &amp; overheads were more than half open when I boarded.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united #1007 Houston-Bogota boarding again, safety first, it seems the mechanics fixed the problem faster, good energy to fly home/family",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united I will be stunned if my bags are in Hartford with me.  The ORD ground crew only had an hour to move my bags 200 yards",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united still can't dm, it's LH7631 on 21/2/15",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united are my bags here yet?  They were at Palm Springs airport.  I was at LAX.  How come I beat my bags here.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united thanks for the offer, but I finally made it to my destination, albeit hours Late Flight.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united the refund request functionality on http://t.co/5IMDckODfx is broken.i get a time out error.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united + besides, no small degree of self-interest. We take that route several times a year &amp; would hate to be in that situation.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir wifi stays connected about the lifetime of a higgs boson",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir here is my conf #F8NEQM. My flight was delayed for 3 hours while my friend waited for me on her bday. Please follow up.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir oh no worries. Just have never seen that before until today. I mean…it is a great card 😀",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir really easy for locals to get down to the strip. book.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir Thanks. I did go through these motions shortly after my flight yesterday. I wonder how quickly flight attendants are notified.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir i just recieved an email from your memphis station hopefully they have my bag.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir pleaseeee resume direct flights from FLL to PHL. I don't want to fly with anyone else 😩😫😢",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir I wish i would've seen this 4 hours ago!!! I WANTED TO SEE THEM TONIGHT SO BAD!!!! #CRYING",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir delay is understandable but look at the time of the the flight and boarding time. Weird!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir the sign in screen had major mobile issues, the responsive design wasn't working properly my Nexus 5.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir Is my friend lucky enough to see #DestinationDragons live on his birthday? He's been a fan for years @thirty_lives",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir have a flight from Oakland to SNA at 7:30, and I asked if I can take 5:30, even there are 5 empty sests. Answer is \"No\". :(",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir alas, it was pretty full so we had to entertain ourselves with witty repartee ...",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir Yeah, we figured it out.  Thanks.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir I'm concerned that you will Cancelled Flight my flight out of BNA tomorrow am. Should I be?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir done messed up now!!! I have planned a trip to #CostaRica for pennies!!! #VacaTime ✈️💺",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@southwestair TREMENDOUS job. Atlanta Airport saw SW celebrate Mardi Gras. Another reason I'm nuts for you guys! http://t.co/8WBzOrRn3C",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir Thank you - hung up after 1hr 7min on hold. Would you like me to DM you contact info?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir I need updates on my flights 464 &amp; 3574. I have been on hold for over 2 hours.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue can't book a flight because of outdated, forced opt-in \"Verified by Visa\" nonsense. Help a girl out? I just want to get to @sxsw",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue thank you! Headed from LBC to OAK !",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "OMGee!!! @JetBlue #OnFleek Why @JetBlue Why?!? 😭😁😆😵 How many people even know what that means, lol?",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "Lmfaooo “@JetBlue: Our fleet's on fleek. http://t.co/1G9RnmYUQe”",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "But, are your flight attendants fucking tho? RT @JetBlue: Our fleet's on fleek. http://t.co/wGYzTnjCXm",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I digg it!",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue @BrandsSayingBae well here we go",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue Understood but I watched as fam heading to FL was expedited when they had 25m to takeoff. I am speaking at conference in SF",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue wall separating in row 1. #safetyconcerns http://t.co/zTrDwV0N4l",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I know, but I wanted to pass it along. Not good for the \"T5 experience\" esp for someone who flies 2-3 times a month.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I fly w/u as much as I can, however your kiosks were broken in SYR and there was 1 woman working the ticket counter.. She had a",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue Even 5 years after the earthquake...Haiti still needs helps in rebuilding #flyingitforward",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue yeah that's all been done. Define \"incidentals\"? How much can I spend on gear so this trip is not a waste?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue why won't the site let me book tickets for nov for jfk to kin?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I'm on flt 700 lax to FLL both ppl are sleeping so Id rather not disturb in flight. Tried to dl movie no go http://t.co/Nh2i9ZlzMk",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue Any option for luggage assistance on the ground at HPN? Flight 2168 delayed 2+ hours &amp; we will have 2 sleeping kids when we land",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue thanks...",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I'll take 3 round trip tickets to the closest warmest place please! #negativedegrees #buffalo #snowwillnevermelt",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue what's the hold up with flight 1553? boarding should've taken place 30 minutes ago.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue dont get me wrong i love flying with you. Tv, free bags and descent fares. The recent plane problems are just annoying.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue This is how you have me feeling.... http://t.co/esUu0hiAjM",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue lots of people scratching heads and looking at screens ignoring passengers",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue nope. None to be found",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue also. Emergency exit seats. 6'2\" and that's a huge win.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue  I'm game if you're buying!!  ;)",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue Beatriz and Susan. Gate 4 MCO.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I will try that. Thanks! If all else fails I will just do the old fashioned method tomorrow morning.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I would go for 3rd time to Jamaica to volunteer w/ at risk youth #flyitforward #dc #stpatricksfoundation #rotary",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue figured but delay is listed at almost 2 hrs. Thanks for being great! Cheers",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways and now you can't even accommodate us by letting us fly in to another airport?! Horrible service for your fault!!!",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways @AmericanAir Can you bring guinea pigs in small pet carrier onboard your flights?",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways ok thanks",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways look out for flying rocks this time! It's a bird it's a plane! Nah never mind it's just a rock...",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways can I speak to a human with some compassion? I wrote an email to discuss my experience and received a generic \"sorry\" email back",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways back in line at terminal because phone guy couldn't help.  One person in front of me 20 min wait again? http://t.co/HQHdAD7fvK",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways okay, great. Thank you!",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways as the employee responsible for social media content, yes u probably do care however the actions from last night say otherwise",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways stuck at the gate in Charlotte, NC waiting for \"release papers\" and a fix for a broken computer system.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways help! Flight Cancelled Flighted, can't call because my phone doesn't work in Europe. Please help? Says I'm booked want to confirm.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways  in don't have it on me at the time as I am taking Amtrak home. How do we call for partial refunds?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways trying 2 fly frm DCA to SRQ to visit a family member in hospice but 4532 was Cancelled Flightled, can someone assist me?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways ok. Thank you",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways but don't worry! They found a hotel, it's only 45min away. I got there around 11:30pm, no problem.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways I needed to be at my destination by lunchtime today. No one could get us on a flight, but I've since learned @Delta had one!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways but it's not their fault, because their policy says they at least got us to our destination. Really?",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways that's where we are now. Thank you.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways just called reservations.  Cannot change just able to put note on res.  Problem is tsa...",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways flying from Manchester international to Philadelphia and getting emails about delays, no information about connecting flights..",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways I appreciate that you actually monitor Twitter, so please  pass along my feedback. I've tried calling about 15 times in 4 days :(",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways What's the point of a baggage claim ticket if they don't scan it  for tracking?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways I asked for some reimbursement something like miles added to my account and was told to call customer service",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "Thanks. “@USAirways: @fispahani Weather disruptions have caused some of our crew to run Late Flight. We're sorry for the delay to your flight.”",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways  redeemed themselves!  Flight out at 7:44!!! Had to call and negotiate,  but thank the Lord I'm heading home!!!!!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways This flight was for my brother. He has been rebooked and I was able to give my info over the phone to get him a pass to the Club.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways Thank you so much its been a very stressful day",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways thank you! I tried that and they said they didn't have it. Anywhere else to try?",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir 4th flight rebooked to is NOT Cancelled Flighted! Woo-hoo. Going to make it to @LaGuardiaAir",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir Thanks!",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir Lady at B1 ABQ for 5347 on 2/23 was of a great service to all among several Cancelled Flightlations",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir the original receipt lists my flight cost as $89ish, and doesn't reflect the use of a voucher",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir did you guys get rid of the functionality on http://t.co/R1OQAVEO7I to put a reservation on hold for 24 hours? i don't see it",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir this is all i gotta say to y'all &amp; your staff... for real http://t.co/rKPRxTGvfL",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir @USAirways use the app you say?? http://t.co/WnY9TzsR8N",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir it's not a friend it's a legally required chaperone on a school trip.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir I am, called Paris office this morning again, still waiting. It is in Miami but apparently tag was \"taken off\"",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir. For two days now I have been trying to reach #AmericanAirlines customer service to change my flight.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir The word failure means: an act or instance of failing or proving unsuccessful; lack of success nonperformance of something due.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir Thanks! Are they really open 3.30 am - 7 pm every day? Any way to check they are open before going all the way there? Thanks.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir is there only one call centre? I know it's busy right now, really need to speak to agent not computer",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir I want to speak to a human being! !!  This is not an obscene request!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir @tcunningham10 please call us back to rebook. 7403607771 we can't through!!!!! We need to get to columbus!!!!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@americanair Help!  I need to speak to a live agent before I lose my online reservation being held.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 371,
+                        "num_incorrect": 124,
+                        "num_invalid": 0,
+                        "total": 495,
+                        "accuracy": 0.75,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.71,
+                                0.79
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.04
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 7212,
+                            "±3%": 801,
+                            "±5%": 288
+                        }
+                    }
+                },
+                "Negative": {
+                    "samples": {
+                        "incorrect": [
+                            {
+                                "sample": {
+                                    "input": "@VirginAmerica thank you for the easy itinerary shift for impending weather. Quick, painless &amp; free.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@VirginAmerica Just trying to book tickets to NYC and facing super fun broken styling. Don't worry, I'll keep trying :)",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@VirginAmerica ok! first time flying with you tonight :)",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@VirginAmerica @JezzieGoldz would have been a rough trip but LUCKILY we were on a #virginamerica flight. #weather",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united you think you boarded flight AU1066 too early? I think so.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united despite my bag not making it to Newark good informative email tracking updates help!",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united maybe one day you'll be the one quoted on http://t.co/mJkpgVXmPC",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united i need it there before she lands so she can have the EWR baggage claim file to have it sent but the employee has not droppeditoffyet",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united he has no priority and Iove it",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united Woke up to notification- flight moved 1.5 hrs early. Barely made flight then 3 hrs layover in SFO - wanted to hop on earlier option",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united I would like to talk to a customer service agent about the service / non service I received on my last flight a a week or so a go.\nJ",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@United maybe find a different gate #ua1758",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "“@united: @rikrik__ What made you come to this? Can we help you with anything? ^JP” the service just hasn't been great.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united...do you still have flat tire policy.  Shuttle broke down on way to ORD.  Will probably miss the 425pm to CLE...Help please!!",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united - tick, tock, tick, tock, it is rapidly approaching the next dream departure of 1:45pm. When is the next fantasy departure time??",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united this customer service experience will be tweeted for quality assurance.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united What does delayed due to Customer Service mean for UA761?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united I'm a first time solo female traveller and it's pretty scary being in a foreign place not knowing where your belongings are...",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united flight ua90 is taking off now after 1750 was delayed over 4 hrs 30 passengers to miss their flight to tel aviv",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united what exactly do you hang on this hook? http://t.co/ZHxOk07Aqa",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": ".@united too much info to share via tweet. Please send me your name and contact info. Happy to supply you with images and CS rep names.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united First Officer of UA 1514 checking our 757 prior to departure from EWR yesterday while on his cell. Safety ??? http://t.co/1TFH2v0a7z",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united no still trying to get home.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united I may not hit any new status this year, but I’ve flown several times this year and have tried to book with y’all every time!",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united well played, ^LO.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united love being told you would issue a refund when you couldn't get us out of the way of a hurricane to have it denied",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united Thanks! Just DMed HN.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united all good, didn't die or anything. As they say \"you get what you pay for\"!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united looking back - never heard from anyone - I had to call and frankly got standard SOP - still think about it today",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united makes total sense, except flight wasn't full :) I've got empty seats around me &amp; overheads were more than half open when I boarded.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united still can't dm, it's LH7631 on 21/2/15",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united my reservation were changed so that I can longer make my connecting flight. How can I change this without incurring a fee?",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united This is with regard to a flight from a couple weeks ago. I'm very frustrated with your policies &amp; expressing that.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united are my bags here yet?  They were at Palm Springs airport.  I was at LAX.  How come I beat my bags here.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united the refund request functionality on http://t.co/5IMDckODfx is broken.i get a time out error.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@united + besides, no small degree of self-interest. We take that route several times a year &amp; would hate to be in that situation.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir wifi stays connected about the lifetime of a higgs boson",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir here is my conf #F8NEQM. My flight was delayed for 3 hours while my friend waited for me on her bday. Please follow up.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir really easy for locals to get down to the strip. book.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir Thanks. I did go through these motions shortly after my flight yesterday. I wonder how quickly flight attendants are notified.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir i just recieved an email from your memphis station hopefully they have my bag.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir pleaseeee resume direct flights from FLL to PHL. I don't want to fly with anyone else 😩😫😢",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir baggage claim has already changed 2x...most recent had 3 bags come out and then stop...claim team has no idea what's going on",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir i hope i can be apart of the team with this job opening!",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir I wish i would've seen this 4 hours ago!!! I WANTED TO SEE THEM TONIGHT SO BAD!!!! #CRYING",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir not sure I can trust a statement with that many small numbers above words. http://t.co/o3sRL1hfho",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir delay is understandable but look at the time of the the flight and boarding time. Weird!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir can you show me some luv?Its 9 degrees and all this snow but Imdetermined to go to #DestinationDragons http://t.co/oXm6cWGaB7",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir the sign in screen had major mobile issues, the responsive design wasn't working properly my Nexus 5.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir I got a phishing email claiming to be from Southwest. I can forward to you if you'd like to investigate.",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir Is my friend lucky enough to see #DestinationDragons live on his birthday? He's been a fan for years @thirty_lives",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir alas, it was pretty full so we had to entertain ourselves with witty repartee ...",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir Yeah, we figured it out.  Thanks.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir I'm concerned that you will Cancelled Flight my flight out of BNA tomorrow am. Should I be?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir done messed up now!!! I have planned a trip to #CostaRica for pennies!!! #VacaTime ✈️💺",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@southwestair TREMENDOUS job. Atlanta Airport saw SW celebrate Mardi Gras. Another reason I'm nuts for you guys! http://t.co/8WBzOrRn3C",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir Thank you - hung up after 1hr 7min on hold. Would you like me to DM you contact info?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@SouthwestAir I need updates on my flights 464 &amp; 3574. I have been on hold for over 2 hours.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue thank you! Headed from LBC to OAK !",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "No they didn't -.- “@JetBlue: Our fleet's on fleek. http://t.co/58B7swRpmq”",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "Lmfaooo “@JetBlue: Our fleet's on fleek. http://t.co/1G9RnmYUQe”",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "But, are your flight attendants fucking tho? RT @JetBlue: Our fleet's on fleek. http://t.co/wGYzTnjCXm",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I digg it!",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue @BrandsSayingBae well here we go",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue Understood but I watched as fam heading to FL was expedited when they had 25m to takeoff. I am speaking at conference in SF",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue wall separating in row 1. #safetyconcerns http://t.co/zTrDwV0N4l",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I love #JetBlue ! #FlyFi when will we be able to charge our devices on domestic #A320 flights?! Thanks! http://t.co/obqIro1bUJ",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I fly w/u as much as I can, however your kiosks were broken in SYR and there was 1 woman working the ticket counter.. She had a",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue Even 5 years after the earthquake...Haiti still needs helps in rebuilding #flyingitforward",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue yeah that's all been done. Define \"incidentals\"? How much can I spend on gear so this trip is not a waste?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue why won't the site let me book tickets for nov for jfk to kin?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I'm on flt 700 lax to FLL both ppl are sleeping so Id rather not disturb in flight. Tried to dl movie no go http://t.co/Nh2i9ZlzMk",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue Any option for luggage assistance on the ground at HPN? Flight 2168 delayed 2+ hours &amp; we will have 2 sleeping kids when we land",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I'll take 3 round trip tickets to the closest warmest place please! #negativedegrees #buffalo #snowwillnevermelt",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue what's the hold up with flight 1553? boarding should've taken place 30 minutes ago.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue dont get me wrong i love flying with you. Tv, free bags and descent fares. The recent plane problems are just annoying.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue This is how you have me feeling.... http://t.co/esUu0hiAjM",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue lots of people scratching heads and looking at screens ignoring passengers",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue  I'm game if you're buying!!  ;)",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue Beatriz and Susan. Gate 4 MCO.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue hey you guys remembered lol! But now my BOS flights delayed... And turn the heat down in T5 it feels hotter than PR.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I will try that. Thanks! If all else fails I will just do the old fashioned method tomorrow morning.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue I would go for 3rd time to Jamaica to volunteer w/ at risk youth #flyitforward #dc #stpatricksfoundation #rotary",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@JetBlue figured but delay is listed at almost 2 hrs. Thanks for being great! Cheers",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways and now you can't even accommodate us by letting us fly in to another airport?! Horrible service for your fault!!!",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways @AmericanAir Can you bring guinea pigs in small pet carrier onboard your flights?",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways ok thanks",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways look out for flying rocks this time! It's a bird it's a plane! Nah never mind it's just a rock...",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways okay, great. Thank you!",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways stuck at the gate in Charlotte, NC waiting for \"release papers\" and a fix for a broken computer system.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways AA Gate Supervisor emplid 600117 allowed flight AA67 to leave JFK to SJ on 20feb15 w/o 8 customers that made final boarding call.",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways  in don't have it on me at the time as I am taking Amtrak home. How do we call for partial refunds?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways trying 2 fly frm DCA to SRQ to visit a family member in hospice but 4532 was Cancelled Flightled, can someone assist me?",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways ok. Thank you",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways but don't worry! They found a hotel, it's only 45min away. I got there around 11:30pm, no problem.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways I needed to be at my destination by lunchtime today. No one could get us on a flight, but I've since learned @Delta had one!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways but it's not their fault, because their policy says they at least got us to our destination. Really?",
+                                    "target": "Neutral"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways that's where we are now. Thank you.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways just called reservations.  Cannot change just able to put note on res.  Problem is tsa...",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways flying from Manchester international to Philadelphia and getting emails about delays, no information about connecting flights..",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways I appreciate that you actually monitor Twitter, so please  pass along my feedback. I've tried calling about 15 times in 4 days :(",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways I asked for some reimbursement something like miles added to my account and was told to call customer service",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "Thanks. “@USAirways: @fispahani Weather disruptions have caused some of our crew to run Late Flight. We're sorry for the delay to your flight.”",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways I was told there is no record of my refund.  Can someone please help me. This has been a long day",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways  redeemed themselves!  Flight out at 7:44!!! Had to call and negotiate,  but thank the Lord I'm heading home!!!!!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways This flight was for my brother. He has been rebooked and I was able to give my info over the phone to get him a pass to the Club.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways Thank you so much its been a very stressful day",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Negative",
+                                "llm_response": "Negative"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@USAirways thank you! I tried that and they said they didn't have it. Anywhere else to try?",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir 4th flight rebooked to is NOT Cancelled Flighted! Woo-hoo. Going to make it to @LaGuardiaAir",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Positive",
+                                "llm_response": "Positive"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir the original receipt lists my flight cost as $89ish, and doesn't reflect the use of a voucher",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir did you guys get rid of the functionality on http://t.co/R1OQAVEO7I to put a reservation on hold for 24 hours? i don't see it",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir @USAirways use the app you say?? http://t.co/WnY9TzsR8N",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir it's not a friend it's a legally required chaperone on a school trip.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir I am, called Paris office this morning again, still waiting. It is in Miami but apparently tag was \"taken off\"",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir. For two days now I have been trying to reach #AmericanAirlines customer service to change my flight.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir The word failure means: an act or instance of failing or proving unsuccessful; lack of success nonperformance of something due.",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir Thanks! Are they really open 3.30 am - 7 pm every day? Any way to check they are open before going all the way there? Thanks.",
+                                    "target": "Positive"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir fair enough. But they could have at least told us. Once again it's the lack of communication. Delays happen, just tell me",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral \n"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir @tcunningham10 please call us back to rebook. 7403607771 we can't through!!!!! We need to get to columbus!!!!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            },
+                            {
+                                "sample": {
+                                    "input": "@AmericanAir Flight 953 NYC-Buenos Aires has been delay since yesterday at 10PM. Is going to take off at 3.30PM now? Give us answers!",
+                                    "target": "Negative"
+                                },
+                                "prediction": "Neutral",
+                                "llm_response": "Neutral"
+                            }
+                        ],
+                        "invalid": []
+                    },
+                    "evaluation_statistics": {
+                        "num_correct": 375,
+                        "num_incorrect": 120,
+                        "num_invalid": 0,
+                        "total": 495,
+                        "accuracy": 0.76,
+                        "pct_invalid": 0.0,
+                        "confidence_interval": {
+                            "bounds": [
+                                0.72,
+                                0.8
+                            ],
+                            "confidence_level": 0.95,
+                            "margin_of_error": 0.04
+                        },
+                        "recommended_sample_sizes": {
+                            "±1%": 7055,
+                            "±3%": 784,
+                            "±5%": 282
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "llm_stats": {
+        "token_usage": {},
+        "total_prompt_tokens": 0,
+        "total_completion_tokens": 0,
+        "total_tokens": 0,
+        "total_cost": "0"
+    },
+    "timestamp": "2024-05-18T03:21:11.626475"
+}

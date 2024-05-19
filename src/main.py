@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import sys
 
 from tabulate import tabulate
 
@@ -53,13 +54,13 @@ def make_experiment_result_table(experiment_run: ExperimentRun) -> str:
     return tabulate(table_data, headers=headers, tablefmt="grid")
 
 
-async def main() -> None:
+async def main(experiment: str, num_samples: int) -> None:
 
     llm = LlmService()
-    runner_options = ExperimentRunnerOptions(random_seed=46, num_samples=100)
+    runner_options = ExperimentRunnerOptions(random_seed=46, num_samples=num_samples)
     runner = ExperimentRunner(llm=llm, options=runner_options)
     experiment = ExperimentDefinition.from_file(
-        PROJECT_ROOT / "experiments" / "language_correctness_cosmos.yml"
+        PROJECT_ROOT / "experiments" / f"{experiment}.yml"
     )
     experiment_run = await runner.run(experiment)
 
@@ -69,4 +70,8 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    args = sys.argv[1:]
+    if len(args) != 2:
+        raise ValueError("Usage: python main.py <experiment_name> <num_samples>")
+
+    asyncio.run(main(args[0], int(args[1])))

@@ -2,16 +2,14 @@ name: "Instruction itemization tweet sentiment analysis"
 experiment_type: "INSTRUCTION_ITEMIZATION"
 task_type: "TWEET_SENTIMENT_ANALYSIS"
 models:
-  - "meta-llama/Llama-2-7b-chat-hf"
-  - "meta-llama/Llama-2-13b-chat-hf"
-  - "meta-llama/Llama-2-70b-chat-hf"
-  - "gpt-3.5-turbo-0613"
+#  - "meta-llama/Llama-2-7b-chat-hf"
+#  - "meta-llama/Llama-2-13b-chat-hf"
+#  - "meta-llama/Llama-2-70b-chat-hf"
+#  - "gpt-3.5-turbo-0613"
+  - "gemini-1.0-pro"
 prompts:
-  system: "ii_twitter_system.jinja2"
+  system: "system_generic.jinja2"
   user:
-    # todo remove
-    - name: "Old Baseline"
-      file: "ics_twitter_baseline.jinja2"
     - name: "Baseline"
       file: "ii_twitter_baseline.jinja2"
     - name: "Itemized"

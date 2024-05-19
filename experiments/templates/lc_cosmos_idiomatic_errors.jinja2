@@ -1,0 +1,11 @@
+Choosing correct answer to question based on provided context by selecting label appropriate. Every question single correct answer it has. Labels possible are A, B, C, D. Only letter corresponding to answer correct your response should contain.
+
+Context: {{ input.context }}
+
+Question: {{ input.question }}
+
+Options:
+
+{% for label, text in input.choices.items() %}
+{{ label }}: {{ text }}
+{% endfor %}
